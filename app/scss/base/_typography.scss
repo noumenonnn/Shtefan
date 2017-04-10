@@ -1,0 +1,71 @@
+//
+// Typography
+// --------------------------------------------------
+// Global font size and line height
+// -------------------------
+
+html {
+  color: $text-color;
+  font-family: $body-font-family;
+  font-size: $font-size-base;
+  font-weight: $body-font-weight;
+  line-height: $line-height-base;
+}
+// Headings
+// -------------------------
+
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: $headings-color;
+  font-family: $headings-font-family;
+  font-weight: $headings-font-weight;
+}
+
+.h1,
+h1 {
+  @include type-setting(3);
+  margin-bottom: v-rithm(1);
+  margin-top: v-rithm(1);
+}
+
+.h2,
+h2 {
+  @include type-setting(2);
+  margin-bottom: v-rithm(1);
+  margin-top: v-rithm(1);
+}
+
+.h3,
+h3 {
+  @include type-setting(1);
+  margin-bottom: v-rithm(1 / 2);
+  margin-top: v-rithm(1 / 2);
+}
+
+.h4,
+h4 {
+  @include type-setting(0);
+  margin-bottom: v-rithm(1 / 2);
+  margin-top: v-rithm(1 / 2);
+}
+// Body text
+// -------------------------
+
+p {
+  margin: 0 0 v-rithm(1 / 2);
+}
+
+.caption {
+  font-size: $font-size-very-small;
+  margin: 0 0 v-rithm(1 / 2);
+}
