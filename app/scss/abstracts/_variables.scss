@@ -1,0 +1,183 @@
+//
+// Variables
+// --------------------------------------------------
+
+
+//== Debug
+$debug: false !default;
+
+//== Colors
+//
+//## Brand colors for use across project.
+$color-black:                          hsl(0, 0%, 0%) !default;
+$color-hunter-green:                   hsl(145, 63%, 5%) !default;
+$color-pine-green:                     hsl(143, 65%, 8%) !default;
+$color-golden:                         hsl(45, 97%, 48%) !default;
+$color-pumpkin-orange:                 hsl(34, 97%, 48%) !default;
+$color-beige:                          hsl(50, 64%, 81%) !default;
+$color-beige-87:                       transparentize($color-beige, .13) !default;
+$color-beige-54:                       transparentize($color-beige, .46) !default;
+$color-beige-24:                       transparentize($color-beige, .76) !default;
+
+
+//== Scaffolding
+//
+//## Settings for some of the most global styles.
+//** Background color for `<body>`.
+$background-color:                     $color-hunter-green !default;
+//** Alternative block color.
+$background-color-accent:              $color-pine-green !default;
+
+//** Global text color on `<body>`.
+$text-color:                           $color-beige-87 !default;
+
+//** Global box-shadow variables
+$shadow-color:                         transparentize($color-black, .66) !default;
+$shadow-default:                       0 4px 20px 0 $shadow-color !default;
+
+
+//** Global textual link color.
+$link-color:                           $text-color  !default;
+$link-color-hover:                     $color-beige-54 !default;
+$link-color-active:                    $color-golden !default;
+$link-color-neutral:                   $color-beige-54 !default;
+$link-color-neutral-hover:             $text-color  !default;
+
+//** Global button color.
+$button-color:                         $color-golden !default;
+$button-color-text-hover:              $color-hunter-green !default;
+$button-gradient-bg:                   linear-gradient(to right, $color-golden, $color-pumpkin-orange) !default;
+$button-border-radius:                 50px !default;
+
+//== Typography
+//
+//## Font, line-height, and color for body text, headings, and more.
+
+$font-family-base:                     'FuturaNewBook' !default;
+$font-size-base:                        21px !default;
+$font-scale-ratio:                      1.5 !default;
+$font-size-large:                       type-scale(2) !default;
+$font-size-medium:                      type-scale(1) !default;
+$font-size-small:                       type-scale(0) / 1.285 !default;
+
+//** Line heights
+$line-height-base:                      $font-size-base * 1.619047619047619 !default; // ~34px
+
+$line-heights: (
+                                        0: $line-height-base,
+                                        1: $line-height-base * 1.25,
+                                        2: $line-height-base * 2
+) !default;
+
+//** Headings
+$headings-font-family:                  $font-family-base !default;
+$headings-font-weight:                  400 !default;
+$headings-color:                        inherit !default;
+
+//** Body text
+$body-font-family:                      $font-family-base !default;
+$body-font-weight:                      200 !default;
+$body-color:                            inherit !default;
+$caption-font-size:                     $font-size-base / 1.285 !default;
+
+//-- Z-index master list
+//
+
+$z-indexes: (
+                          'modal':     5000,
+                          'dropdown':  4000,
+                          'menu':      3000,
+                          'after':     2,
+                          'default':   1,
+                          'below':    -1,
+) !default;
+
+//== Media queries breakpoints
+//
+//## Define the breakpoints at which your layout will change, adapting to different screen sizes.
+
+$breakpoints: (
+                          'very-large': (max-width: 1024px),
+                          'large':      (max-width: 768px),
+                          'medium':     (max-width: 568px),
+                          'small':      (max-width: 480px),
+                          'very-small': (max-width: 320px),
+) !default;
+
+//==Layout basic
+//
+//##
+
+// Page wrap width
+$layout-default-width:       100% !default;
+
+// Content max-width
+$layout-content-max-width:   1132px !default;
+
+// Layout wraper padding's
+$layout-default-padding:     v-rithm(1) !default;
+$layout-mobile-padding:      h-rithm(1) !default;
+
+//// Icons
+//
+////** Social media
+//$icon-fb                : 'images/icons/icn_social-fb.svg';
+//$icon-twitter           : 'images/icons/icn_social-vk.svg';
+//$icon-vk                : 'images/icons/icn_social-twitter.svg';
+//$social-media-icons: (
+//                        'facebook': $icon-fb,
+//                        'twitter' : $icon-twitter,
+//                        'vk'      : $icon-vk,
+//) !default;
+
+//== Navbar
+//
+//##
+
+// Basics of a navbar
+$navbar-height:                            120px !default;
+$navbar-menu-height:                       $line-height-base * 2 !default;
+$navbar-default-color:                     #000 !default;
+$navbar-default-bg:                        #fff !default;
+$navbar-logo-height:                       40px !default;
+$navbar-logo-height-small:                 32px !default;
+
+
+//** Forms
+//** `<input>` background color
+$input-bg:                       #fff !default;
+//** `<input disabled>` background color
+$input-bg-disabled:              #f00 !default;
+
+//** Text color for `<input>`s
+$input-color:                    #f00 !default;
+//** `<input>` border color
+$input-border:                   #f00 !default;
+
+//** Default `.form-control` border radius
+// This has no effect on `<select>`s in some browsers, due to the limited stylability of `<select>`s in CSS.
+$input-border-radius-base:       3px !default;
+//** Large `.form-control` border radius
+$input-border-radius-large:      6px !default;
+//** Small `.form-control` border radius
+$input-border-radius-small:      1px !default;
+
+//** Border color for inputs on focus
+$input-border-focus:             #66afe9 !default;
+
+//** Placeholder text color
+$input-color-placeholder:        #999 !default;
+
+//** Default `.form-control` height
+$input-height-base:              v-rithm(2) !default;
+
+//** Small `.form-control` height
+$input-height-small:             v-rithm(1) !default;
+
+
+
+//==Animation basics
+//
+//##
+
+$animation-default-function:     .3s ease-in-out;
