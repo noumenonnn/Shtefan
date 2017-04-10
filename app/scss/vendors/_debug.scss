@@ -1,0 +1,28 @@
+/*Dev*/
+@if $debug == true {
+
+  * {
+    outline: 1px dotted red;
+  }
+
+  * {
+    outline: 1px dotted red;
+  }
+
+  * * {
+    outline: 1px dotted green;
+  }
+
+  * * * {
+    outline: 1px dotted orange;
+  }
+
+  * * * * {
+    outline: 1px dotted blue;
+  }
+
+  * * * * * {
+    outline: 1px solid red;
+  }
+
+}
