@@ -1,3 +1,32 @@
-body {
-  background-color: pink;
-}
+@charset 'UTF-8';
+
+// 1. Configuration and helpers
+@import
+  'abstracts/variables',
+  'abstracts/mixins';
+
+// 2. Vendors
+@import
+  'vendors/reset',
+  'vendors/debug';
+
+// 3. Base stuff
+@import
+  'base/base',
+  'base/fonts',
+  'base/typography',
+  'base/helpers',
+  'base/icons';
+
+// 4. Layout-related sections
+@import
+  'layout/header';
+
+// 5. Components
+@import
+  'components/buttons',
+  'components/links';
+
+// 6. Page-specific styles
+@import
+  'pages/index';
