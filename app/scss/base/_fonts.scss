@@ -1,0 +1,42 @@
+// -----------------------------------------------------------------------------
+// This file contains all fonts.
+// -----------------------------------------------------------------------------
+
+//Webfont: FuturaNewBook-Reg //
+@font-face {
+  font-family: 'FuturaNewBook';
+  src: url('../../fonts/FuturaNewBook-Reg.eot'); // IE9 Compat Modes //
+  src: url('../../fonts/FuturaNewBook-Reg.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+         url('../../fonts/FuturaNewBook-Reg.woff') format('woff'), /* Modern Browsers */
+         url('../../fonts/FuturaNewBook-Reg.ttf') format('truetype'), /* Safari, Android, iOS */
+         url('../../fonts/FuturaNewBook-Reg.svg#FuturaNewBook-Reg') format('svg'); // Legacy iOS //
+  font-style: normal;
+  font-weight: 200;
+  text-rendering: optimizeLegibility;
+}
+
+// Webfont: Lazurski-Bold //
+@font-face {
+  font-family: 'Lazurski';
+  src: url('../../fonts/Lazurski-Bold.eot'); // IE9 Compat Modes //
+  src: url('../../fonts/Lazurski-Bold.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+         url('../../fonts/Lazurski-Bold.woff') format('woff'), /* Modern Browsers */
+         url('../../fonts/Lazurski-Bold.ttf') format('truetype'), /* Safari, Android, iOS */
+         url('../../fonts/Lazurski-Bold.svg#Lazurski-Bold') format('svg'); // Legacy iOS //
+  font-style: normal;
+  font-weight: 800;
+  text-rendering: optimizeLegibility;
+}
+
+// Webfont: Klementina //
+@font-face {
+  font-family: 'Klementina';
+  src: url('../../fonts/Klementina.eot'); // IE9 Compat Modes //
+  src: url('../../fonts/Klementina.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+         url('../../fonts/Klementina.woff') format('woff'), /* Modern Browsers */
+         url('../../fonts/Klementina.ttf') format('truetype'), /* Safari, Android, iOS */
+         url('../../fonts/Klementina.svg#Klementina') format('svg'); // Legacy iOS //
+  font-style: normal;
+  font-weight: 400;
+  text-rendering: optimizeLegibility;
+}
