@@ -1,0 +1,118 @@
+// Mixins
+// --------------------------------------------------
+
+//== Typography
+
+/// Line height calculate
+@function line-height($level) {
+  @return map-get($line-heights, $level);
+}
+
+/// Font size calculate
+@function type-scale($level, $base: $font-size-base, $ratio: $font-scale-ratio) {
+  $size: $base;
+  @for $i from 0 to $level {
+    $size: $size * $ratio;
+  }
+  @return $size / $font-size-base * 1rem;
+}
+
+/// Type settings up (Font size + Line height)
+@mixin type-setting($level, $base: $font-size-base, $ratio: $font-scale-ratio) {
+  font-size: type-scale($level, $base: $font-size-base, $ratio: $font-scale-ratio);
+  line-height: line-height($level);
+}
+
+// Mixin for :hover and :focus pseudos
+@mixin hocus {
+  &:hover,
+  &:focus {
+    @content;
+  }
+}
+
+
+//== Themes
+
+/// Buttons theme
+@mixin scotch-button-theme($color, $text-color-hover: $button-color-text-hover) {
+  color: $color;
+  background-color: transparent;
+  cursor: pointer;
+  border: solid 1px $color;
+  white-space: nowrap;
+
+  @include hocus {
+    background-color: $color;
+    border: 1px solid transparent;
+    color: $text-color-hover;
+  }
+}
+
+/// Links theme
+@mixin scotch-link-theme($color, $color-text-hover: $color) {
+  color: $color;
+
+  &:hover {
+    color: $link-color-hover;
+  }
+}
+
+//== Layout
+
+/// Center-align a block level element
+@mixin center-block() {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/// Get a z-index value from a layer name
+@function z($layer) {
+  @return map-get($z-indexes, $layer);
+}
+
+/// Vertical rithm calc
+/// $base - $line-height-base  ~24px;
+/// $level {String} - Multiplication factor
+@function v-rithm($level, $base: $line-height-base){
+  $size: $base;
+  $result: $size * $level;
+  @return $result;
+}
+
+/// Background image place
+@mixin background($imgpath,$position:0 0,$repeat: no-repeat) {
+  background: {
+    image: url($imgpath);
+    position: $position;
+    repeat: $repeat;
+  }
+}
+
+
+
+//== Responsive design
+
+/// Responsive breakpoint manager
+/// @access public
+/// @param {String} $breakpoint - Breakpoint
+/// @requires $breakpoints
+@mixin respond-to($breakpoint) {
+  $raw-query: map-get($breakpoints, $breakpoint);
+
+  @if $raw-query {
+    $query: if(
+                    type-of($raw-query) == 'string',
+                    unquote($raw-query),
+                    inspect($raw-query)
+    );
+
+    @media #{$query} {
+      @content;
+    }
+  } @else {
+    @error 'No value found for `#{$breakpoint}`. '
+         + 'Please make sure it is defined in `$breakpoints` map.';
+  }
+}
