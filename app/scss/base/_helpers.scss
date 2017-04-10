@@ -1,0 +1,22 @@
+.wrap {
+  overflow: hidden;
+  width: $layout-default-width;
+  //min-width: 1024px;
+}
+//Настройка ширины контента
+.content {
+  @include center-block();
+  max-width: $layout-content-max-width;
+  padding-left: $layout-default-padding;
+  padding-right: $layout-default-padding;
+  padding-top: v-rithm(4);
+  z-index: z(default);
+}
+
+.disabled {
+  visibility: hidden;
+}
+
+.hidden {
+  display: none;
+}

@@ -1,0 +1,44 @@
+// -----------------------------------------------------------------------------
+// This file contains very basic styles.
+// -----------------------------------------------------------------------------
+
+html {
+  box-sizing: border-box;
+}
+
+*, *::before, *::after {
+  box-sizing: inherit;
+}
+
+body {
+  background-color: $background-color;
+}
+
+main {
+  align-content: center;
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+}
+
+img {
+  max-width: 100%;
+  vertical-align: middle;
+}
+
+a {
+  color: $text-color;
+  text-decoration: none;
+
+  @include hocus {
+    color: $link-color-hover;
+    text-decoration: underline;
+  }
+}
+
+@include respond-to(medium) {
+  .content {
+    padding-left: $layout-mobile-padding;
+    padding-right: $layout-mobile-padding;
+  }
+}
