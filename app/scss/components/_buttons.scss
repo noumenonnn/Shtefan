@@ -1,0 +1,80 @@
+%button {
+  border-radius: $button-border-radius;
+  display: inline-block;
+  font-family: $body-font-family;
+  font-size: $font-size-base;
+  font-weight: $body-font-weight;
+  padding: $line-height-base / 2 36px ($line-height-base / 2) - 1;
+  transition: all  $animation-default-function;
+}
+
+.scotch-button {
+  @extend %button;
+  @include scotch-button-theme($button-color);
+
+  &.ghost {
+    border: 1px solid $button-color;
+
+    &:hover {
+      background-color: $button-color;
+    }
+  }
+}
+
+// .btn-border-rev {
+//   background-color: #e5e5e5;
+//   border: 1px solid #e5e5e5;
+//   color: #a6a6a6;
+//
+//   &::before,
+//   &:after {
+//     content: ' ';
+//     border-style: solid;
+//     position: absolute;
+//     z-index: 5;
+//     border-radius: 3px;
+//     box-sizing: content-box;
+//     transform: all $animation-default-function;
+//   }
+//
+//   &:before {
+//     border-width: 1px 0;
+//     height: 100%;
+//     right: 0;
+//     top: -1px;
+//     width: 0;
+//   }
+//
+//   &:after {
+//     border-width: 0 1px;
+//     bottom: 0;
+//     height: 0;
+//     left: -1px;
+//     transition-delay: .05s;
+//     width: 100%;
+//   }
+//
+//   &:hover {
+//     background-color: transparent;
+//
+//     &:before {
+//       width: 100%;
+//     }
+//
+//     &:after {
+//       height: 100%;
+//     }
+//   }
+//   // @each $name,$hex in $btn-colors {
+//   //   &.btn-#{$name} {
+//   //     &:after,
+//   //     &:before {
+//   //       border-color: #{$hex};
+//   //     }
+//   //
+//   //     &:hover {
+//   //       color: #{$hex};
+//   //     }
+//   //   }
+//   // }
+// }
