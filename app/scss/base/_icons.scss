@@ -27,31 +27,59 @@
   text-align: center;
   text-decoration: inherit;
   text-transform: none;
-  // font-size: 120%; //
+  // font-size: 120%;
   width: 1em;
 }
 
 .icon-icn-beer::before {
   content: '\e800';
+  font-size: v-rithm(1);
 }
-// '' //
 
 .icon-icn-burger::before {
   content: '\e801';
+  font-size: v-rithm(1);
 }
-// '' //
 
 .icon-icn-dessert::before {
   content: '\e802';
+  font-size: v-rithm(1);
 }
-// '' //
 
 .icon-icn-drinks::before {
   content: '\e803';
+  font-size: v-rithm(1);
 }
-// '' //
 
 .icon-icn-salad::before {
   content: '\e804';
+  font-size: v-rithm(1);
 }
-// '' //
+
+.icon-icn-view-full-card::before {
+  content: '\e805';
+}
+
+.icon-icn-mouse::before {
+  content: '\e901';
+}
+
+.icon-icn-view-grid::before {
+  content: '\e806';
+}
+
+.icon-icn-social-fb::before {
+  content: '\e900';
+}
+
+.icon-icn-navigation-arrow::before {
+  content: '\e807';
+}
+
+.icon-icn-social-instagram::before {
+  content: '\e809';
+}
+
+.icon-icn-social-vk::before {
+  content: '\e808';
+}
