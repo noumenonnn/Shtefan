@@ -57,12 +57,16 @@ $font-family-base:                     'FuturaNewBook' !default;
 $font-family-secondary:                'Lazurski' !default;
 $font-family-accent:                   'Klementina' !default;
 
+$font-weight-base:                      200;
+$font-weight-medium:                    400;
+$font-weight-bold:                      800;
+
 $font-size-base:                        21px !default;
 $font-scale-ratio:                      1.5 !default;
 $font-size-large:                       type-scale(3) !default;
 $font-size-large:                       type-scale(2) !default;
 $font-size-medium:                      type-scale(1) !default;
-$font-size-small:                       type-scale(0) !default;
+$font-size-small:                       $font-size-base * .761904761904762 !default;
 $font-size-very-small:                  $font-size-base * .666666666666667 !default;
 
 //** Line heights
@@ -118,11 +122,11 @@ $breakpoints: (
 $layout-default-width:                   100% !default;
 
 // Content max-width
-$layout-content-max-width:               1132px !default;
+$layout-content-max-width:               1442px !default;
 
 // Layout wraper padding's
 $layout-default-padding:                 v-rithm(1) !default;
-$layout-mobile-padding:                  h-rithm(1) !default;
+$layout-mobile-padding:                  v-rithm(1) !default;
 
 
 // Basics of a navbar
@@ -132,6 +136,10 @@ $navbar-default-color:                   #000 !default;
 $navbar-default-bg:                      #fff !default;
 $navbar-logo-height:                     40px !default;
 $navbar-logo-height-small:               32px !default;
+
+
+// Block settings
+$border-radius-default:                  10px;
 
 
 //** Forms
