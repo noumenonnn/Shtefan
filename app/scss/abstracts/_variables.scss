@@ -18,6 +18,7 @@ $color-beige:                          hsl(50, 64%, 81%) !default;
 $color-beige-87:                       transparentize($color-beige, .13) !default;
 $color-beige-54:                       transparentize($color-beige, .46) !default;
 $color-beige-24:                       transparentize($color-beige, .76) !default;
+$color-hunter-green-67:                transparentize($color-hunter-green, .33) !default;
 
 
 //== Scaffolding
@@ -82,7 +83,7 @@ $line-heights: (
 //** Headings
 $headings-font-family:                  $font-family-secondary !default;
 $headings-font-weight:                  800 !default;
-$headings-color:                        inherit !default;
+$headings-color:                        $color-beige !default;
 
 //** Body text
 $body-font-family:                      $font-family-base !default;
@@ -97,6 +98,7 @@ $z-indexes: (
                                         'modal':     5000,
                                         'dropdown':  4000,
                                         'menu':      3000,
+                                        'ui-elem':   10,
                                         'after':     2,
                                         'default':   1,
                                         'below':    -1,
@@ -120,6 +122,7 @@ $breakpoints: (
 
 // Page wrap width
 $layout-default-width:                   100% !default;
+$layout-default-height:                  100% !default;
 
 // Content max-width
 $layout-content-max-width:               1442px !default;

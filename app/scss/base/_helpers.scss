@@ -1,7 +1,18 @@
 .page-wrapper {
-  // overflow: hidden;
+  height: $layout-default-height;
+  left: 0;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  position: absolute;
+  top: 0;
   width: $layout-default-width;
-  //min-width: 1024px;
+}
+
+.screen {
+  // height: $layout-default-height;
+  padding-bottom: v-rithm(3.5);
+  padding-top: v-rithm(3.5);
+  width: $layout-default-width;
 }
 
 //Настройка ширины контента
@@ -12,68 +23,11 @@
   padding-right: v-rithm(1);
   padding-top: v-rithm(4);
   z-index: z(default);
-}
 
-.section-wrap {
-  padding-top: v-rithm(3.5);
-}
-
-// this is the viewport container //
-.screen-wrapper {
-  height: 100%;
-  overflow: auto;
-  position: relative;
-  width: 100%;
-  z-index: z(default);
-}
-
-// this is a container for the steps //
-.screens {
-  height: 100%;
-  left: 0;
-  overflow: hidden;
-  position: absolute;
-  top: 0;
-  width: 100%;
-}
-
-.roll {
-  bottom: 0;
-  height: auto;
-  left: 0;
-  position: absolute;
-  right: 0;
-  top: 0;
-  width: auto;
-}
-
-
-// this is the full size scrolling pane //
-.pane {}
-
-// the step class //
-.step {
-  height: 100%;
-  left: 0;
-  position: absolute;
-  top: 100%;
-  // optional transition //
-  transition: top .5s;
-  width: 100%;
-
-  &.prev {
-    top: -100%;
-  }
-
-  &.next {
-    top: 100%;
-  }
-
-  &.curr {
-    top: 0;
+  * {
+    z-index: z(default);
   }
 }
-
 
 .disabled {
   visibility: hidden;

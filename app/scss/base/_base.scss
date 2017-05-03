@@ -36,6 +36,6 @@ a {
 
   @include hocus {
     color: $link-color-hover;
-    text-decoration: underline;
+    text-decoration: none;
   }
 }

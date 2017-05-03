@@ -78,5 +78,18 @@ p {
   font-weight: $font-weight-bold;
   letter-spacing: 2.3px;
   line-height: $line-height-base;
-  text-align: center;
+
+  &.accent {
+    color: $color-golden;
+  }
+}
+
+%accent-text {
+  color: $color-beige;
+  font-family: $font-family-accent;
+  font-size: type-scale(1);
+  font-stretch: normal;
+  font-style: normal;
+  font-weight: $font-weight-medium;
+  letter-spacing: .3px;
 }
