@@ -1,0 +1,35 @@
+{
+  "name": "panelsnap",
+  "version": "0.15.1",
+  "main": "jquery.panelSnap.js",
+  "description": "jQuery plugin that provides snapping functionality to a set of panels within your interface.",
+  "keywords": [
+    "snap",
+    "snapping",
+    "element",
+    "elements",
+    "panel",
+    "panels",
+    "scroll",
+    "scrolling"
+  ],
+  "license": "MIT",
+  "ignore": [
+    ".jshintrc",
+    "**/*.txt"
+  ],
+  "dependencies": {
+    "jquery": ">=1.7"
+  },
+  "homepage": "https://github.com/guidobouman/jquery-panelsnap",
+  "_release": "0.15.1",
+  "_resolution": {
+    "type": "version",
+    "tag": "v0.15.1",
+    "commit": "83b9143270c54a02489a4f9935d9f4923977df2f"
+  },
+  "_source": "https://github.com/guidobouman/jquery-panelsnap.git",
+  "_target": "0.15.1",
+  "_originalSource": "panelsnap",
+  "_direct": true
+}

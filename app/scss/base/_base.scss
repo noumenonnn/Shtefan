@@ -26,19 +26,16 @@ img {
   vertical-align: middle;
 }
 
+svg {
+  vertical-align: middle;
+}
+
 a {
   color: $text-color;
   text-decoration: none;
 
   @include hocus {
     color: $link-color-hover;
-    text-decoration: underline;
-  }
-}
-
-@include respond-to(medium) {
-  .content {
-    padding-left: $layout-mobile-padding;
-    padding-right: $layout-mobile-padding;
+    text-decoration: none;
   }
 }

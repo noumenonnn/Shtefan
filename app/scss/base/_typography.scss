@@ -69,3 +69,27 @@ p {
   font-size: $font-size-very-small;
   margin: 0 0 v-rithm(1 / 2);
 }
+
+.label {
+  font-family: $font-family-secondary;
+  font-size: $font-size-small;
+  font-stretch: normal;
+  font-style: normal;
+  font-weight: $font-weight-bold;
+  letter-spacing: 2.3px;
+  line-height: $line-height-base;
+
+  &.accent {
+    color: $color-golden;
+  }
+}
+
+%accent-text {
+  color: $color-beige;
+  font-family: $font-family-accent;
+  font-size: type-scale(1);
+  font-stretch: normal;
+  font-style: normal;
+  font-weight: $font-weight-medium;
+  letter-spacing: .3px;
+}

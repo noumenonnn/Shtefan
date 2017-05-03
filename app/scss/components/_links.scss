@@ -5,10 +5,10 @@
 .scotch-link {
   @extend %link;
   @include scotch-link-theme($link-color);
+  transition: all $animation-default-function;
 
   &.neutral {
     @include scotch-link-theme($link-color-neutral);
-    transition: all $animation-default-function;
 
     &:hover {
       color: $link-color-neutral-hover;

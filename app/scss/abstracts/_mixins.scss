@@ -75,14 +75,14 @@
 /// Vertical rithm calc
 /// $base - $line-height-base  ~24px;
 /// $level {String} - Multiplication factor
-@function v-rithm($level, $base: $line-height-base){
+@function v-rithm($level, $base: $line-height-base) {
   $size: $base;
   $result: $size * $level;
   @return $result;
 }
 
 /// Background image place
-@mixin background($imgpath,$position:0 0,$repeat: no-repeat) {
+@mixin background($imgpath,$position:0 0, $repeat: no-repeat) {
   background: {
     image: url($imgpath);
     position: $position;

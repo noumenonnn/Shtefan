@@ -1,16 +1,32 @@
-.wrap {
-  overflow: hidden;
+.page-wrapper {
+  height: $layout-default-height;
+  left: 0;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  position: absolute;
+  top: 0;
   width: $layout-default-width;
-  //min-width: 1024px;
 }
+
+.screen {
+  // height: $layout-default-height;
+  padding-bottom: v-rithm(3.5);
+  padding-top: v-rithm(3.5);
+  width: $layout-default-width;
+}
+
 //Настройка ширины контента
 .content {
   @include center-block();
   max-width: $layout-content-max-width;
-  padding-left: $layout-default-padding;
-  padding-right: $layout-default-padding;
+  padding-left: v-rithm(1);
+  padding-right: v-rithm(1);
   padding-top: v-rithm(4);
   z-index: z(default);
+
+  * {
+    z-index: z(default);
+  }
 }
 
 .disabled {
@@ -20,3 +36,10 @@
 .hidden {
   display: none;
 }
+
+// @include respond-to(medium) {
+//   .content {
+//     padding-left: $layout-mobile-padding;
+//     padding-right: $layout-mobile-padding;
+//   }
+// }

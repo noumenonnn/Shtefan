@@ -18,6 +18,7 @@ $color-beige:                          hsl(50, 64%, 81%) !default;
 $color-beige-87:                       transparentize($color-beige, .13) !default;
 $color-beige-54:                       transparentize($color-beige, .46) !default;
 $color-beige-24:                       transparentize($color-beige, .76) !default;
+$color-hunter-green-67:                transparentize($color-hunter-green, .33) !default;
 
 
 //== Scaffolding
@@ -57,12 +58,16 @@ $font-family-base:                     'FuturaNewBook' !default;
 $font-family-secondary:                'Lazurski' !default;
 $font-family-accent:                   'Klementina' !default;
 
+$font-weight-base:                      200;
+$font-weight-medium:                    400;
+$font-weight-bold:                      800;
+
 $font-size-base:                        21px !default;
 $font-scale-ratio:                      1.5 !default;
 $font-size-large:                       type-scale(3) !default;
 $font-size-large:                       type-scale(2) !default;
 $font-size-medium:                      type-scale(1) !default;
-$font-size-small:                       type-scale(0) !default;
+$font-size-small:                       $font-size-base * .761904761904762 !default;
 $font-size-very-small:                  $font-size-base * .666666666666667 !default;
 
 //** Line heights
@@ -78,7 +83,7 @@ $line-heights: (
 //** Headings
 $headings-font-family:                  $font-family-secondary !default;
 $headings-font-weight:                  800 !default;
-$headings-color:                        inherit !default;
+$headings-color:                        $color-beige !default;
 
 //** Body text
 $body-font-family:                      $font-family-base !default;
@@ -93,6 +98,7 @@ $z-indexes: (
                                         'modal':     5000,
                                         'dropdown':  4000,
                                         'menu':      3000,
+                                        'ui-elem':   10,
                                         'after':     2,
                                         'default':   1,
                                         'below':    -1,
@@ -116,13 +122,14 @@ $breakpoints: (
 
 // Page wrap width
 $layout-default-width:                   100% !default;
+$layout-default-height:                  100% !default;
 
 // Content max-width
-$layout-content-max-width:               1132px !default;
+$layout-content-max-width:               1442px !default;
 
 // Layout wraper padding's
 $layout-default-padding:                 v-rithm(1) !default;
-$layout-mobile-padding:                  h-rithm(1) !default;
+$layout-mobile-padding:                  v-rithm(1) !default;
 
 
 // Basics of a navbar
@@ -132,6 +139,10 @@ $navbar-default-color:                   #000 !default;
 $navbar-default-bg:                      #fff !default;
 $navbar-logo-height:                     40px !default;
 $navbar-logo-height-small:               32px !default;
+
+
+// Block settings
+$border-radius-default:                  10px;
 
 
 //** Forms
