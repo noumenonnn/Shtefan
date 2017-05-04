@@ -1,0 +1,94 @@
+.ui-social {
+  background-color: transparent;
+  bottom: 0;
+  left: 0;
+  margin: (v-rithm(1.5) + 9px) v-rithm(1.5);
+  padding: 7px 26px 0;
+  position: fixed;
+  transition: all $animation-default-function;
+  z-index: z(ui-elem);
+
+  a {
+    line-height: 1;
+    text-align: center;
+  }
+
+  &.on-backround {
+    background-color: $color-hunter-green-67;
+    border-radius: 24px;
+  }
+
+  :last-child {
+    span::before {
+      margin-right: 0;
+    }
+  }
+}
+
+.ui-mouse-scroll {
+  animation-delay: 1s;
+  animation-duration: 2.2s;
+  animation-iteration-count: infinite;
+  animation-name: scroll;
+  animation-timing-function: cubic-bezier(.15, .41, .69, .94);
+  bottom: 0;
+  color: $color-beige-54;
+  left: 50%;
+  margin: v-rithm(1) 0 (v-rithm(1.5) + 9px) -18px;
+  position: absolute;
+  z-index: z(ui-elem);
+
+  @keyframes scroll {
+  0% { opacity: 0; }
+  10% { transform: translateY(0); opacity: 1; }
+  100% { transform: translateY(15px); opacity: 0;}
+  }
+}
+
+.ui-menu-button {
+  color: $color-beige-54;
+  cursor: pointer;
+  padding: (v-rithm(2.5) - 5) v-rithm(2.5);
+  position: absolute;
+  right: 0;
+  top: 0;
+  z-index: z(ui-elem);
+
+  .nav-toggle-line {
+    background-color: $color-beige;
+    height: 2px;
+    transition: all $animation-default-function;
+    width: 38px;
+
+
+    &:first-child {
+      transform: translate(0, -5px) rotate(0deg);
+    }
+
+    &:last-child {
+      transform: translate(0, 5px) rotate(0deg);
+    }
+  }
+
+  @include hocus {
+    .nav-toggle-line {
+
+      &:first-child {
+        transform: translate(0, -8px) rotate(0deg);
+      }
+
+      &:last-child {
+        transform: translate(0, 8px) rotate(0deg);
+      }
+    }
+  }
+}
+
+.ui-career-link {
+  bottom: 0;
+  position: absolute;
+  right: 0;
+  padding: v-rithm(2) v-rithm(2.5);
+
+
+}
