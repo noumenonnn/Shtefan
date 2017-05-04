@@ -18,7 +18,7 @@
 //Настройка ширины контента
 .content {
   @include center-block();
-  max-width: $layout-content-max-width;
+  max-width: $layout-content-max-width + v-rithm(2);
   padding-left: v-rithm(1);
   padding-right: v-rithm(1);
   padding-top: v-rithm(4);
