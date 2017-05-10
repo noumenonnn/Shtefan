@@ -5,12 +5,7 @@
   height: 100vh;
 
   .content {
-    align-items: center;
-    display: flex;
-    height: 100%;
-    justify-content: space-between;
-    padding-top: 0;
-    z-index: z(after);
+    @extend %content-full-screen;
   }
 }
 
@@ -125,5 +120,74 @@
   .work-hours,
   .phone {
     padding: 0 round(v-rithm(1 / 3));
+  }
+}
+
+.who-is-shtefan {
+  background-image: url('../../img/background-map-screen-2@2x.png');
+  background-position: right;
+  background-size: 100%;
+  height: 100vh;
+
+  .content {
+    @extend %content-full-screen;
+    max-width: $layout-content-max-width-default;
+  }
+}
+
+.who-is-shtefan-inner {
+  display: flex;
+  justify-content: space-between;
+  // margin: 0 123px;
+}
+
+.who-is-shtefan-heading {
+  min-width: 368px;
+  width: 38.294%;
+}
+
+.who-is-shtefan-description {
+  min-width: 320px;
+  width: 38.294%;
+
+  p {
+    margin: v-rithm(1) 0;
+  }
+}
+
+.old-days-inner {
+  .item {
+    align-items: center;
+    display: flex;
+
+    .image {
+      min-width: 520px;
+      width: 51%;
+    }
+
+    .description {
+      padding: 0 v-rithm(1.5);
+      width: 48.578%;
+    }
+  }
+
+  :nth-child(even).item {
+    flex-direction: row-reverse;
+  }
+}
+
+.today {
+  .content {
+    max-width: $layout-content-max-width-full;
+  }
+}
+
+.today-inner {
+  align-items: center;
+  display: flex;
+
+  .description {
+    padding-left: v-rithm(1.5);
+    width: 51.24%;
   }
 }

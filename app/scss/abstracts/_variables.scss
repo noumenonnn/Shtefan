@@ -124,15 +124,17 @@ $breakpoints: (
 $layout-default-width:                   100% !default;
 $layout-default-height:                  100% !default;
 
-// Content max-width
-$layout-content-max-width:               1442px !default;
-
 // Layout wraper padding's
-$layout-default-padding:                 v-rithm(1) !default;
-$layout-mobile-padding:                  v-rithm(1) !default;
+$layout-padding-default:                 v-rithm(2) !default;
+$layout-padding-mobile:                  v-rithm(1) !default;
 
+// Content max-width
+$layout-content-padding:                 $layout-padding-default;
+$layout-content-max-width-full:          1442px !default;
+$layout-content-max-width-default:       1264px !default;
 
 // Basics of a navbar
+$navbar-width:                           800px;
 $navbar-height:                          120px !default;
 $navbar-menu-height:                     $line-height-base * 2 !default;
 $navbar-default-color:                   #000 !default;

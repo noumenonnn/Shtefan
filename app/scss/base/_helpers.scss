@@ -14,11 +14,10 @@
   padding-top: v-rithm(3.5);
   width: $layout-default-width;
 }
-
 //Настройка ширины контента
 .content {
   @include center-block();
-  max-width: $layout-content-max-width + v-rithm(2);
+  max-width: $layout-content-max-width-default;
   padding-left: v-rithm(1);
   padding-right: v-rithm(1);
   padding-top: v-rithm(4);
@@ -27,6 +26,16 @@
   * {
     z-index: z(default);
   }
+}
+//Настройка ширины контента для full height экранов
+%content-full-screen {
+  align-items: center;
+  display: flex;
+  height: 100%;
+  justify-content: space-between;
+  max-width: $layout-content-max-width-full;
+  padding-top: 0;
+  z-index: z(after);
 }
 
 .disabled {
@@ -37,6 +46,9 @@
   display: none;
 }
 
+.wow {
+  visibility: hidden;
+}
 // @include respond-to(medium) {
 //   .content {
 //     padding-left: $layout-mobile-padding;
