@@ -65,6 +65,12 @@ p {
   margin: 0 0 v-rithm(1 / 2);
 }
 
+hr {
+  @extend %divider-line;
+  border: 0;
+  margin: 0;
+}
+
 .caption {
   font-size: $font-size-very-small;
   margin: 0 0 v-rithm(1 / 2);
