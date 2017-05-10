@@ -92,3 +92,62 @@
 
 
 }
+
+.ui-side-points {
+  display: flex;
+  height: 510px;
+  margin: 0 v-rithm(2.5);
+  position: fixed;
+  right: 0;
+  top: calc(50% - 255px);
+  transition: all $animation-default-function;
+  z-index: z(ui-elem);
+
+  .side-points-inner {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .line {
+    margin: v-rithm(1) 0;
+  }
+
+  a {
+    padding: 0 v-rithm(1 / 2);
+    position: relative;
+    width: 20px;
+
+    &::after {
+      background-color: $color-beige-54;
+      bottom: 41%;
+      content: '';
+      display: block;
+      height: 1px;
+      position: absolute;
+      right: 0;
+      transform: scaleX(.524) translate3d(-50%, 0, 0);
+      transform-origin: 50% 0;
+      transition: transform .5s;
+      width: 100%;
+    }
+
+    &:hover:after {
+      background-color: $color-beige;
+      transform: scaleX(1) translate3d(-50%, 0, 0);
+
+    }
+
+    &.active {
+      &::after {
+        background-color: $color-golden;
+        height: 2px;
+        transform: scaleX(1) translate3d(-50%, 0, 0);
+      }
+    }
+  }
+
+  &.hide {
+    visibility: hidden;
+  }
+}
