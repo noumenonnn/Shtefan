@@ -1,14 +1,11 @@
-// var wow = new WOW({
-//   boxClass: 'wow', // animated element css class (default is wow)
-//   animateClass: 'animated', // animation css class (default is animated)
-//   offset: 0, // distance to the element when triggering the animation (default is 0)
-//   mobile: true, // trigger animations on mobile devices (default is true)
-//   live: true, // act on asynchronously loaded content (default is true)
-//   scrollContainer: null // optional scroll container selector, otherwise use window
-// });
-// wow.init();
-// console.log(wow);
-// new WOW().init();
+// init with element
+var grid = document.querySelector('.service-inner');
+var msnry = new Masonry( grid, {
+  // options...
+  itemSelector: '.image',
+  columnWidth: 430,
+  gutter: 85
+});
 
 wow = new WOW(
   {
@@ -52,13 +49,4 @@ jQuery(function($) {
     $target = $('.page-wrapper .screen[data-subpanel=' + num + ']');
     $('.page-wrapper').panelSnap('snapToPanel', $target);
   })
-});
-
-// init with element
-var grid = document.querySelector('.service-inner');
-var msnry = new Masonry( grid, {
-  // options...
-  itemSelector: '.image',
-  columnWidth: 430,
-  gutter: 85
 });
