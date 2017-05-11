@@ -138,20 +138,19 @@
 .who-is-shtefan-inner {
   display: flex;
   justify-content: space-between;
-  // margin: 0 123px;
-}
 
-.who-is-shtefan-heading {
-  min-width: 368px;
-  width: 38.294%;
-}
+  .who-is-shtefan-heading {
+    min-width: 368px;
+    width: 38.294%;
+  }
 
-.who-is-shtefan-description {
-  min-width: 320px;
-  width: 38.294%;
+  .who-is-shtefan-description {
+    min-width: 320px;
+    width: 38.294%;
 
-  p {
-    margin: v-rithm(1) 0;
+    p {
+      margin: v-rithm(1) 0;
+    }
   }
 }
 
@@ -177,8 +176,10 @@
 }
 
 .today {
+  height: 100vh;
+
   .content {
-    max-width: $layout-content-max-width-full;
+    @extend %content-full-screen;
   }
 }
 
@@ -186,8 +187,46 @@
   align-items: center;
   display: flex;
 
+  .image {
+    margin-left: -15vw;
+    width: 65%;
+
+  }
+
   .description {
-    padding-left: v-rithm(1.5);
-    width: 51.24%;
+    padding-left: v-rithm(2.5);
+    width: 53.421%;
+
+    h1 {
+      margin: v-rithm(1.5) 0;
+    }
+
+    p {
+      margin-left: v-rithm(2.5);
+      margin-top: v-rithm(2.5);
+      width: 69.491%;
+    }
+  }
+}
+
+.service {
+  h1 {
+    margin-bottom: v-rithm(3);
+    margin-top: 0;
+    text-align: center;
+  }
+}
+
+.service-inner {
+  @include center-block();
+  max-width: 950px;
+
+  .image {
+    float: left;
+    margin-bottom: v-rithm(2.5);
+  }
+
+  :nth-child(2) {
+    margin-top: v-rithm(8);
   }
 }

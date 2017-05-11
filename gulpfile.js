@@ -43,7 +43,8 @@ gulp.task('scripts', function() {
         'app/libs/jquery/dist/jquery.min.js', // Берем jQuery
         'app/libs/panelsnap/jquery.panelSnap.js', // Плагин для скролла слайдов
         'app/libs/jquery.easing.js', // Плагин c функциями плавности
-        'app/libs/wow/dist/wow.js'
+        'app/libs/wow/dist/wow.js',
+        'app/libs/masonry/dist/masonry.pkgd.js'
         //other libraries
         ])
         .pipe(concat('libs.min.js')) // Собираем их в кучу в новом файле libs.min.js
