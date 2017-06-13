@@ -13,12 +13,19 @@ $color-black:                          hsl(0, 0%, 0%) !default;
 $color-hunter-green:                   hsl(145, 63%, 5%) !default;
 $color-pine-green:                     hsl(143, 65%, 8%) !default;
 $color-golden:                         hsl(45, 97%, 48%) !default;
+$color-golden-87:                      transparentize($color-golden, .13) !default;
 $color-pumpkin-orange:                 hsl(34, 97%, 48%) !default;
 $color-beige:                          hsl(50, 64%, 81%) !default;
 $color-beige-87:                       transparentize($color-beige, .13) !default;
 $color-beige-54:                       transparentize($color-beige, .46) !default;
 $color-beige-24:                       transparentize($color-beige, .76) !default;
 $color-hunter-green-67:                transparentize($color-hunter-green, .33) !default;
+$color-error:                          rgba(233,30,99,1) !default; //создать переменную цвета
+$color-success:                        rgba(139,195,74,1) !default; //создать переменную цвета
+
+//==Animation basics
+//
+$animation-default-function:             .3s ease-in-out;
 
 
 //== Scaffolding
@@ -65,7 +72,6 @@ $font-weight-bold:                      800;
 $font-size-base:                        21px !default;
 $font-scale-ratio:                      1.5 !default;
 $font-size-large:                       type-scale(3) !default;
-$font-size-large:                       type-scale(2) !default;
 $font-size-medium:                      type-scale(1) !default;
 $font-size-small:                       $font-size-base * .761904761904762 !default;
 $font-size-very-small:                  $font-size-base * .666666666666667 !default;
@@ -143,45 +149,73 @@ $navbar-logo-height:                     40px !default;
 $navbar-logo-height-small:               32px !default;
 
 
+$navbar-menu-full-height:                510px !default;
+
+
 // Block settings
-$border-radius-default:                  10px;
+$border-radius-default:                  10px !default;
+$border-radius-round:                    20px !default;
 
 
 //** Forms
-//** `<input>` background color
-$input-bg:                               #fff !default;
-//** `<input disabled>` background color
-$input-bg-disabled:                      #f00 !default;
+//**
 
-//** Text color for `<input>`s
-$input-color:                            #f00 !default;
-//** `<input>` border color
-$input-border:                           #f00 !default;
+$input-font-size:                        $font-size-base;
 
-//** Default `.form-control` border radius
+// Default `.form-control` border radius
 // This has no effect on `<select>`s in some browsers, due to the limited stylability of `<select>`s in CSS.
 $input-border-radius-base:               3px !default;
-//** Large `.form-control` border radius
+// Large `.form-control` border radius
 $input-border-radius-large:              6px !default;
-//** Small `.form-control` border radius
+// Small `.form-control` border radius
 $input-border-radius-small:              1px !default;
 
-//** Border color for inputs on focus
+// Border color for inputs on focus
 $input-border-focus:                     #66afe9 !default;
 
-//** Placeholder text color
-$input-color-placeholder:                #999 !default;
 
-//** Default `.form-control` height
-$input-height-base:                      v-rithm(2) !default;
+// Text Inputs + Textarea
+$input-height: 32px !default;
+$input-border-color: $color-beige-54 !default;
+$input-border: 1px solid $input-border-color !default;
+$input-background: #fff !default;
+$input-error-color: $color-error !default;
+$input-success-color: $color-success !default;
+$input-focus-color: $color-golden !default;
+$input-font-size: $font-size-base !default;
+$input-margin-bottom: 20px;
+$input-margin: 0 0 $input-margin-bottom 0 !default;
+$input-padding: 0 !default;
+$input-transition: all $animation-default-function !default;
+$label-font-size: $font-size-very-small !default;
+$input-disabled-color: rgba(0,0,0, .26) !default;
+$input-disabled-solid-color: #BDBDBD !default;
+$input-disabled-border: 1px dotted $input-disabled-color !default;
+$input-invalid-border: 1px solid $input-error-color !default;
+$placeholder-text-color: lighten($input-border-color, 20%) !default;
 
-//** Small `.form-control` height
-$input-height-small:                     v-rithm(1) !default;
+// Radio Buttons
+$radio-fill-color: $color-golden !default;
+$radio-empty-color: #5a5a5a !default;
+$radio-border: 2px solid $radio-fill-color !default;
 
+// Range
+$range-height: 14px !default;
+$range-width: 14px !default;
+$track-height: 3px !default;
 
+// Select
+$select-border: 1px solid #f2f2f2 !default;
+$select-background: $color-hunter-green;
+$select-focus: 1px solid lighten($color-golden, 47%) !default;
+$select-padding: 5px !default;
+$select-radius: 2px !default;
+$select-disabled-color: rgba(0,0,0,.3) !default;
 
-//==Animation basics
-//
-//##
+// Dropdown
+// ==========================================================================
 
-$animation-default-function:             .3s ease-in-out;
+$dropdown-bg-color: $color-hunter-green !default;
+$dropdown-hover-bg-color: $color-pine-green !default;
+$dropdown-color: $color-hunter-green-67 !default;
+$dropdown-item-height: 50px !default;

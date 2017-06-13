@@ -39,26 +39,31 @@ $icons-margin-social: .3em;
 .icon-burger::before {
   content: '\e900';
   font-size: v-rithm(1);
+  margin-right: v-rithm(.5);
 }
 
 .icon-salad::before {
   content: '\e901';
   font-size: v-rithm(1);
+  margin-right: v-rithm(.5);
 }
 
 .icon-beer::before {
   content: '\e902';
   font-size: v-rithm(1);
+  margin-right: v-rithm(.5);
 }
 
 .icon-drinks::before {
   content: '\e903';
   font-size: v-rithm(1);
+  margin-right: v-rithm(.5);
 }
 
 .icon-dessert::before {
   content: '\e904';
   font-size: v-rithm(1);
+  margin-right: v-rithm(.5);
 }
 
 .icon-navigation-arrow::before {
@@ -87,10 +92,14 @@ $icons-margin-social: .3em;
 
 .icon-view-grid::before {
   content: '\e909';
+  font-size: $font-size-base * 1.285714285714286;
+  margin-right: 0;
 }
 
 .icon-view-full-card::before {
   content: '\e90a';
+  font-size: $font-size-base * 1.285714285714286;
+  margin-right: 0;
 }
 
 .icon-mouse::before {
@@ -103,24 +112,73 @@ $icons-margin-social: .3em;
   color: $color-beige-24;
   content: '\e90c';
   font-size: $font-size-base * .523809523809524;
+  text-align: left;
+  width: 74px;
 }
 
 .icon-arrow-divided-right-after::before {
   color: $color-beige-24;
   content: '\e90d';
   font-size: $font-size-base * .523809523809524;
+  text-align: left;
+  width: 74px;
 }
 
 .icon-arrow-left::before {
   color: $color-beige-24;
   content: '\e90e';
   font-size: $font-size-base * .523809523809524;
+  margin-right: 0;
+  width: 212px;
+}
+
+.icon-arrow-right::before {
+  color: $color-beige-24;
+  content: '\e90e';
+  font-size: $font-size-base * .523809523809524;
+  transform: scale(-1, 1);
+  margin-right: 0;
+  width: 212px;
 }
 
 .icon-arrow-simple-up::before {
   content: '\e90f';
+  margin-right: 0;
+  font-size: v-rithm(1);
 }
 
 .icon-arrow-simple-down::before {
   content: '\e910';
+  margin-right: 0;
+  font-size: v-rithm(1);
+}
+
+.icon-arrow-divided-right-before-l::before {
+  color: $color-beige-24;
+  content: '\e911';
+  font-size: $font-size-base * .523809523809524;
+  width: 127px;
+}
+
+.icon-arrow-divided-right-after-l::before {
+  color: $color-beige-24;
+  content: '\e912';
+  font-size: $font-size-base * .523809523809524;
+  width: 127px;
+}
+
+.icon-arrow-divided-right-before-rtl-l::before {
+  color: $color-beige-24;
+  content: '\e911';
+  font-size: $font-size-base * .523809523809524;
+  transform: scale(-1, 1);
+  width: 127px;
+}
+
+.icon-arrow-divided-right-after-rtl-l::before {
+  color: $color-beige-24;
+  content: '\e912';
+  font-size: $font-size-base * .523809523809524;
+  transform: scale(-1, 1);
+  width: 127px;
 }

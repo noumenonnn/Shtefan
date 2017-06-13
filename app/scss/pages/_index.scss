@@ -2,11 +2,8 @@
   background-image: url('../../img/background-main-screen@2x.jpg');
   background-repeat: no-repeat;
   background-size: cover;
-  height: 100vh;
-
-  .content {
-    @extend %content-full-screen;
-  }
+  background-attachment: fixed;
+  @extend %full-screen;
 }
 
 .shtefan-cover {
@@ -20,7 +17,7 @@
     bottom: 0;
     height: 98%;
     left: 1%;
-    opacity: .34;
+    opacity: 0.34;
     position: absolute;
     right: 0;
     top: 1%;
@@ -70,22 +67,15 @@
     padding: v-rithm(1);
     transition: all $animation-default-function;
     width: 280px;
-
     @include hocus {
       background-color: $color-hunter-green-67;
     };
-
   }
 
   .num {
     display: flex;
     justify-content: space-between;
     text-align: center;
-
-    span {
-      text-align: left;
-      width: 74px;
-    }
 
     div {
       @extend %accent-text;
@@ -110,15 +100,14 @@
     padding: v-rithm(1 / 2) 0;
     text-align: center;
 
-
     div {
       @extend %accent-text;
       transform: rotate(-6deg);
     }
   }
 
-  .work-hours,
-  .phone {
+  .phone,
+  .work-hours {
     padding: 0 round(v-rithm(1 / 3));
   }
 }
@@ -127,10 +116,10 @@
   background-image: url('../../img/background-map-screen-2@2x.png');
   background-position: right;
   background-size: 100%;
-  height: 100vh;
+  background-attachment: fixed;
+  @extend %full-screen;
 
   .content {
-    @extend %content-full-screen;
     max-width: $layout-content-max-width-default;
   }
 }
@@ -142,22 +131,40 @@
   .who-is-shtefan-heading {
     min-width: 368px;
     width: 38.294%;
+    visibility: hidden;
   }
 
   .who-is-shtefan-description {
     min-width: 320px;
     width: 38.294%;
+    visibility: hidden;
 
     p {
       margin: v-rithm(1) 0;
     }
   }
+
+  &.is-active {
+    .who-is-shtefan-heading {
+      @extend .animated;
+      @extend .fadeInLeft;
+      visibility: visible;
+    }
+
+    .who-is-shtefan-description {
+      @extend .animated;
+      @extend .fadeInRight;
+      visibility: visible;
+    }
+  }
 }
 
 .old-days-inner {
-  .item {
+  .old-days-item {
     align-items: center;
     display: flex;
+    visibility: hidden;
+    margin-bottom: v-rithm(2.5);
 
     .image {
       min-width: 520px;
@@ -168,19 +175,47 @@
       padding: 0 v-rithm(1.5);
       width: 48.578%;
     }
+
+    &.is-active {
+      visibility: visible;
+
+      .image {
+        @extend .animated;
+        @extend .fadeInLeft;
+        visibility: visible;
+      }
+
+      .description {
+        @extend .animated;
+        @extend .fadeInRight;
+        visibility: visible;
+      }
+    }
   }
 
-  :nth-child(even).item {
+  :nth-child(even).old-days-item {
     flex-direction: row-reverse;
+
+    &.is-active {
+      visibility: visible;
+
+      .image {
+        @extend .animated;
+        @extend .fadeInRight;
+        visibility: visible;
+      }
+
+      .description {
+        @extend .animated;
+        @extend .fadeInLeft;
+        visibility: visible;
+      }
+    }
   }
 }
 
 .today {
-  height: 100vh;
-
-  .content {
-    @extend %content-full-screen;
-  }
+  @extend %full-screen;
 }
 
 .today-inner {
@@ -190,12 +225,13 @@
   .image {
     margin-left: -15vw;
     width: 65%;
-
+    visibility: hidden;
   }
 
   .description {
     padding-left: v-rithm(2.5);
     width: 53.421%;
+    visibility: hidden;
 
     h1 {
       margin: v-rithm(1.5) 0;
@@ -207,13 +243,38 @@
       width: 69.491%;
     }
   }
+
+  &.is-active {
+    .image {
+      @extend .animated;
+      @extend .fadeInLeft;
+      visibility: visible;
+    }
+
+    .description {
+      @extend .animated;
+      @extend .fadeInRight;
+      visibility: visible;
+    }
+  }
 }
 
 .service {
-  h1 {
+  .content {
+    display: block;
+  }
+
+  .h1 {
     margin-bottom: v-rithm(3);
     margin-top: 0;
     text-align: center;
+    visibility: hidden;
+
+    &.is-active {
+      @extend .animated;
+      @extend .fadeInUp;
+      visibility: visible;
+    }
   }
 }
 
@@ -224,9 +285,339 @@
   .image {
     float: left;
     margin-bottom: v-rithm(2.5);
+    position: relative;
+    visibility: hidden;
+
+    > span {
+      @extend %accent-text;
+      font-size: type-scale(2);
+      // color: $color-golden;
+      transform: rotate(-6deg);
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      text-align: center;
+      width: 100%;
+    }
+
+    &.is-active {
+      @extend .animated;
+      @extend .fadeInUp;
+      visibility: visible;
+    }
+
+    &::before {
+      content: " ";
+      display: block;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: v-rithm(7);
+      background: linear-gradient(to bottom, rgba(255,255,255,0) 0%,$color-hunter-green 100%);
+    }
   }
 
-  :nth-child(2) {
+  > :nth-child(2) {
     margin-top: v-rithm(8);
+  }
+}
+
+.menu-products {
+  padding-top: 0;
+  position: relative;
+
+  .carousel-container {
+    display: flex;
+    height: 100vh;
+    position: relative;
+    width: 100%;
+  }
+
+  .carousel {
+    flex-grow: 1;
+    width: 100%;
+  }
+
+  .carousel-cell {
+    counter-increment: carousel-cell;
+    height: 100vh;
+    margin-right: 10px;
+    width: 100%;
+
+    &.is-selected {
+      border-radius: 0;
+    }
+  }
+
+  .flickity-page-dots {
+    display: none;
+  }
+}
+
+.product-card-inner {
+  display: flex;
+  height: 100%;
+  width: 100%;
+
+  .image {
+    height: 100vh;
+    overflow: hidden;
+    width: 50vw;
+
+    img {
+      max-width: none;
+    }
+  }
+
+  .description-inner {
+    align-items: center;
+    background: url('../../img/pattern-burgers.jpg') no-repeat;
+    display: flex;
+    height: 100vh;
+    justify-content: center;
+    width: calc(50vw - 150px);
+  }
+}
+
+.menu-products-grid {
+  position: relative;
+}
+
+.product-category {
+  > :first-child {
+    @extend .animated;
+    @extend .fadeInUp;
+    margin-bottom: v-rithm(3);
+    margin-top: 0;
+    text-align: center;
+  }
+
+  .product-category-inner {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+  }
+
+  .product-item {
+    @extend .animated;
+    @extend .fadeInUp;
+    margin: 0 v-rithm(1.25) v-rithm(2.5);
+    width: 335px;
+  }
+}
+
+.reviews {
+  .content {
+    display: block;
+  }
+
+  .h1 {
+    margin-bottom: v-rithm(3);
+    margin-top: 0;
+    text-align: center;
+    visibility: hidden;
+
+    &.is-active {
+      @extend .animated;
+      @extend .fadeInUp;
+      visibility: visible;
+    }
+  }
+}
+
+.reviews-inner {
+  .profile {
+    display: flex;
+    align-items: center;
+    margin-bottom: v-rithm(.5);
+
+    &-avatar {
+      border-radius: 50%;
+      width: 48px;
+      height: 48px;
+      margin-right: v-rithm(.5);
+    }
+
+    &-date-publication,
+    &-name {
+      margin: 0;
+      line-height: v-rithm(.5);
+    }
+
+    &-name {
+      line-height: v-rithm(.85);
+    }
+
+    &-date-publication {
+      color: $color-beige-54;
+    }
+  }
+
+  .reviews-item {
+    background-color: $color-pine-green;
+    border-radius: $border-radius-default;
+    margin-bottom: v-rithm(2.5);
+    padding: v-rithm(.5);
+    width: 335px;
+    visibility: hidden;
+
+    &-description,
+    &-image {
+      margin-bottom: v-rithm(.5);
+    }
+
+    &-description {
+      height: auto;
+      overflow: hidden;
+
+      &.is-less {
+        height: v-rithm(4);
+      }
+    }
+
+    button {
+      padding: v-rithm(.25) - 2px 0;
+    }
+
+    &.is-active {
+      @extend .animated;
+      @extend .fadeInUp;
+      visibility: visible;
+    }
+  }
+}
+
+.news {
+  @extend .reviews;
+
+  .content {
+    display: flex;
+    flex-direction: column;
+    max-width: $layout-content-max-width-default;
+
+    > button {
+      margin-bottom: v-rithm(2.5);
+    }
+  }
+}
+
+.news-inner {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+
+  .news-item {
+    margin-bottom: v-rithm(2.5);
+    display: flex;
+    align-items: flex-start;
+    width: 557px;
+    display: none;
+    visibility: hidden;
+
+    &-description {
+      height: v-rithm(5);
+      overflow-y: hidden;
+    }
+
+    &-date-publication {
+      color: $color-beige-54;
+      line-height: v-rithm(.5);
+      margin-bottom: 0;
+    }
+
+    &-headline {
+      margin-bottom: v-rithm(.5);
+    }
+
+    &-image {
+      margin-right: v-rithm(1);
+      float: left;
+    }
+
+    &.is-active {
+      @extend .animated;
+      @extend .fadeInUp;
+      visibility: visible;
+    }
+  }
+}
+
+.career {
+  @extend .who-is-shtefan;
+  background: url('../../img/background-career.jpg') 0 bottom no-repeat;
+  background-attachment: fixed;
+
+  .content &-inner {
+    @extend .who-is-shtefan-inner;
+    flex-flow: row wrap;
+    padding-top: v-rithm(2);
+
+    &.is-active {
+      .career-goals {
+        @extend .animated;
+        @extend .fadeInUp;
+        visibility: visible;
+      }
+    }
+  }
+
+  &-heading {
+    @extend .who-is-shtefan-heading;
+  }
+
+  &-description {
+    @extend .who-is-shtefan-description;
+  }
+
+  &-goals {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin-top: v-rithm(2);
+    visibility: hidden;
+  }
+
+  &-goals-item {
+    max-width: 335px;
+
+    p {
+      margin-bottom: 0;
+    }
+  }
+}
+
+.vacancies {
+  @extend .reviews;
+
+  &-item {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: v-rithm(2.5);
+    visibility: hidden;
+
+    &-description {
+      max-width: 458px;
+
+      h3 {
+        margin: 0;
+        color: $color-golden;
+      }
+
+      p {
+        margin-bottom: v-rithm(1);
+      }
+    }
+
+    &-responsibility {
+      max-width: 492px;
+      margin-top: v-rithm(1);
+    }
+
+    &.is-active {
+      @extend .animated;
+      @extend .fadeInUp;
+      visibility: visible;
+    }
   }
 }

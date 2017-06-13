@@ -1,4 +1,7 @@
 .ui-menu {
+  visibility: visible;
+  @extend .animated;
+  @extend .fadeInDown;
   left: 0;
   margin: v-rithm(2) 0 v-rithm(1);
   position: fixed;
@@ -26,7 +29,148 @@
     }
   }
 
+  &.full-screen-menu {
+    height: 100vh;
+    margin: 0;
+    background-color: $color-hunter-green-67;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    ul {
+      flex-direction: column;
+      text-align: center;
+
+      li {
+        animation-name: fadeInDownScale;
+        animation-fill-mode: both;
+        animation-duration: .4s;
+        animation-timing-function: cubic-bezier(0.0, 0.0, 0.2, 1);
+        animation-delay: .4s;
+      }
+
+      li:nth-child(2) {
+        animation-delay: .5s;
+      }
+
+      li:nth-child(3) {
+        animation-delay: .55s;
+      }
+
+      li:nth-child(4) {
+        animation-delay: .60s;
+      }
+
+      li:nth-child(5) {
+        animation-delay: .70s;
+      }
+    }
+
+    a {
+      @include type-setting(2);
+      font-family: $headings-font-family;
+      font-weight: $headings-font-weight;
+    }
+
+    @keyframes fadeInDownScale {
+      from {
+        opacity: 0;
+        transform: translateY(-100px) scale(0);
+      }
+
+      to {
+        opacity: 1;
+        transform: none;
+      }
+    }
+  }
+
+  &.is-active {
+    visibility: visible;
+    @extend .animated;
+    @extend .fadeInDown;
+  }
+
   &.hide {
     visibility: hidden;
+    @extend .animated;
+    @extend .fadeOutUp;
+  }
+}
+
+.ui-menu-button {
+  color: $color-beige-54;
+  cursor: pointer;
+  padding: (v-rithm(2.5) - 5) v-rithm(2.5);
+  position: absolute;
+  right: 0;
+  top: 0;
+  z-index: z(modal);
+
+  .nav-toggle-line {
+    background-color: $color-beige;
+    height: 2px;
+    transition: all $animation-default-function;
+    width: 38px;
+
+
+    &:first-child {
+      transform: translate(0, -5px) rotate(0deg);
+    }
+
+    &:nth-child(2) {
+      opacity: 1;
+    }
+
+    &:last-child {
+      transform: translate(0, 5px) rotate(0deg);
+    }
+  }
+
+  &.is-active {
+    .nav-toggle-line {
+
+      &:first-child {
+        transform: translate(0, 3px) rotate(45deg);
+      }
+
+      &:nth-child(2) {
+        opacity: 0;
+      }
+
+      &:last-child {
+        transform: translate(0) rotate(-45deg);
+      }
+    }
+
+    @include hocus {
+      .nav-toggle-line {
+
+        &:first-child {
+          transform: translate(0, 2px);
+        }
+
+        &:nth-child(2) {
+          opacity: 0;
+        }
+
+        &:last-child {
+          transform:  translate(0, -2px);
+        }
+      }
+    }
+  }
+
+  @include hocus {
+    .nav-toggle-line {
+
+      &:first-child {
+        transform: translate(0, -8px) rotate(0deg);
+      }
+
+      &:last-child {
+        transform: translate(0, 8px) rotate(0deg);
+      }
+    }
   }
 }

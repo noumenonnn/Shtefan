@@ -1,0 +1,47 @@
+.product-description {
+  width: 349px;
+
+  .weight {
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
+  }
+
+  .h1 {
+    text-align: center;
+  }
+
+  .consist {
+    margin-bottom: v-rithm(1);
+  }
+
+  .consist li {
+    border: 1px solid $color-beige-24;
+    border-width: 0 0 1px;
+  }
+
+  .price {
+    display: flex;
+    justify-content: space-between;
+    padding: v-rithm(.5) 0;
+    text-align: center;
+  }
+
+  .price div {
+    @extend %accent-text;
+    color: $color-golden;
+  }
+
+  &.small {
+    margin-top: v-rithm(.5);
+    width: auto;
+
+    .h3 {
+      text-align: center;
+    }
+
+    .consist {
+      margin-bottom: v-rithm(.5);
+    }
+  }
+}

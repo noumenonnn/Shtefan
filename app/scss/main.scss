@@ -9,6 +9,8 @@
 @import
   'vendors/reset',
   'vendors/animate',
+  'vendors/flickity',
+  'vendors/jquery-fancybox',
   'vendors/debug';
 
 // 3. Base stuff
@@ -22,13 +24,21 @@
 // 4. Layout-related sections
 @import
   'layout/ui-menu',
-  'layout/header',
-  'layout/ui-elements';
+  'layout/ui-side-points',
+  'layout/ui-outer-nav',
+  'layout/ui-popup-form',
+  'layout/ui-products-nav',
+  'layout/ui-social';
 
 // 5. Components
 @import
   'components/buttons',
   'components/links',
+  'components/forms',
+  'components/ui-elements',
+  'components/lists',
+  'components/product-description',
+  'components/tooltip',
   'components/dividers';
 
 // 6. Page-specific styles

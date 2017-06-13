@@ -1,0 +1,26 @@
+.ui-mouse-scroll {
+  animation-delay: 1s;
+  animation-duration: 2.2s;
+  animation-iteration-count: infinite;
+  animation-name: scroll;
+  animation-timing-function: cubic-bezier(.15, .41, .69, .94);
+  bottom: 0;
+  color: $color-beige-54;
+  left: 50%;
+  margin: v-rithm(1) 0 (v-rithm(1.5) + 9px) -18px;
+  position: absolute;
+  z-index: z(ui-elem);
+
+  @keyframes scroll {
+  0% { opacity: 0; }
+  10% { transform: translateY(0); opacity: 1; }
+  100% { transform: translateY(15px); opacity: 0;}
+  }
+}
+
+.ui-career-link {
+  bottom: 0;
+  position: absolute;
+  right: 0;
+  padding: v-rithm(2) v-rithm(2.5);
+}

@@ -1,0 +1,101 @@
+.carousel-nav-inner {
+  align-items: flex-start;
+  background-color: $color-pine-green;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  justify-content: center;
+  overflow: hidden;
+  position: relative;
+
+  .carousel-nav {
+    max-height: $navbar-menu-full-height;
+    overflow-y: scroll;
+    width: 180px;
+    z-index: z(menu);
+
+    .carousel-cell {
+      align-items: center;
+      border-radius: 0 $border-radius-default $border-radius-default 0;
+      cursor: pointer;
+      display: flex;
+      height: 102px;
+      justify-content: center;
+      padding: 17px;
+      text-align: center;
+      width: 144px;
+    }
+
+    .carousel-cell.is-nav-selected {
+      background-color: $color-hunter-green;
+      color: $color-golden;
+    }
+  }
+
+  .control-buttons {
+    &-next,
+    &-prev {
+      @extend %button;
+      align-self: center;
+      padding: v-rithm(1 / 2);
+    }
+  }
+
+  .ui-product-menu-control {
+    align-self: center;
+    bottom: v-rithm(1);
+    position: absolute;
+    z-index: z(dropdown);
+
+    .menu-categories-button {
+      padding: v-rithm(1);
+    }
+  }
+}
+
+.categories-nav-inner {
+  @extend .carousel-nav-inner;
+  @extend .animated;
+  @extend .fadeOutRight;
+  width: 163px;
+  position: fixed;
+  visibility: hidden;
+  overflow: visible;
+  top: 0;
+  right: 20px;
+
+  .categories-nav {
+    @extend .carousel-nav;
+    overflow: visible;
+
+    .tablink {
+      @extend .carousel-cell;
+      flex-direction: column;
+
+      span::before {
+        margin-right: 0;
+        margin-bottom: v-rithm(.25);
+      }
+
+    }
+  }
+
+  .ui-product-menu-control {
+    .menu-full-screen-button {
+      @extend .menu-categories-button;
+    }
+  }
+
+  &.is-active {
+    @extend .animated;
+    @extend .fadeInRight;
+    animation-delay: 200ms;
+    visibility: visible;
+  }
+
+  &.hide {
+    visibility: hidden;
+    @extend .animated;
+    @extend .fadeOutRight;
+  }
+}

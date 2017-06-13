@@ -1,0 +1,51 @@
+.fancybox-bg {
+  opacity: 1 !important;
+  background-color: $color-hunter-green-67;
+}
+
+.ui-form-vacancy {
+  background-color: $color-pine-green;
+  border-radius: $border-radius-default;
+  padding: v-rithm(1.5);
+  width: 458px;
+  position: relative;
+  display: none;
+
+  button.close {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: v-rithm(2);
+    height: v-rithm(2);
+    padding: 0;
+
+    span {
+      transition: all $animation-default-function;
+      width: v-rithm(.8);
+      display: inline-block;
+      height: 2px;
+      background-color: $color-beige-54;
+      transform: translate(50%) rotate(45deg);
+    }
+
+    :nth-child(2) {
+      transform: translate(-50%) rotate(-45deg);
+    }
+
+
+    @include hocus {
+      span {
+        width: v-rithm(.8);
+        display: inline-block;
+        height: 2px;
+        background-color: $color-beige;
+        transform: translate(50%) rotate(0);
+      }
+
+      :nth-child(2) {
+        transform: translate(-50%) rotate(0);
+      }
+    }
+
+  }
+}

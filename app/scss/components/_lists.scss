@@ -1,0 +1,16 @@
+.ul {
+  padding-left: v-rithm(1);
+
+  li {
+    margin-bottom: v-rithm(.5);
+    text-indent: -1.7em;
+
+    &::before {
+      content: '\b7\a0';
+      color: $color-golden;
+      font-size: v-rithm(1);
+      vertical-align: middle;
+      padding-right: 0.7em;
+    }
+  }
+}

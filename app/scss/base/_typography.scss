@@ -55,6 +55,8 @@ h3 {
 .h4,
 h4 {
   @include type-setting(0);
+  font-family: $body-font-family;
+  font-weight: $body-font-weight;
   margin-bottom: v-rithm(1 / 2);
   margin-top: v-rithm(1 / 2);
 }

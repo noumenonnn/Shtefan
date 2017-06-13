@@ -1,5 +1,4 @@
 node_modules
-/app/css
 .ftpconfig
 
 app/libs/wow/spec/javascripts/wow-spec.js

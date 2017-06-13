@@ -15,7 +15,7 @@ var gulp       = require('gulp'), // Подключаем Gulp
     async        = require('async'),
     consolidate  = require("gulp-consolidate"),
     realFavicon  = require('gulp-real-favicon'),
-    svgmin       = require('gulp-svgmin'),
+    // svgmin       = require('gulp-svgmin'),
     fs           = require('fs'),
 
     FAVICON_DATA_FILE = 'faviconData.json'; // File where the favicon markups are stored
@@ -41,9 +41,14 @@ gulp.task('browser-sync', function() { // Создаем таск browser-sync
 gulp.task('scripts', function() {
     return gulp.src([ // Берем все необходимые библиотеки
         'app/libs/jquery/dist/jquery.min.js', // Берем jQuery
+        'app/libs/modernizr.js',
         'app/libs/panelsnap/jquery.panelSnap.js', // Плагин для скролла слайдов
-        'app/libs/jquery.easing.js', // Плагин c функциями плавности
-        'app/libs/wow/dist/wow.js',
+        'app/libs/jquery.easing.js', // Плагин преобразовывающий css bezier
+        'app/libs/forms.js',
+        'app/libs/flickity/dist/flickity.pkgd.js',
+        'app/libs/fancybox/dist/jquery.fancybox.js',
+        'app/libs/classie.js',
+        'node_modules/in-view/dist/in-view.min.js',
         'app/libs/masonry/dist/masonry.pkgd.js'
         //other libraries
         ])
@@ -57,36 +62,6 @@ gulp.task('css-libs', ['sass'], function() {
         .pipe(cssnano()) // Сжимаем
         .pipe(rename({suffix: '.min'})) // Добавляем суффикс .min
         .pipe(gulp.dest('app/css')); // Выгружаем в папку app/css
-});
-
-gulp.task('Iconfont', function(done){
-  var iconStream = gulp.src(['app/img/icons/*.svg'])
-    .pipe(iconFont({ fontName: 'myIcons' }));
-
-  async.parallel([
-    function handleGlyphs (cb) {
-      iconStream.on('glyphs', function(glyphs, options) {
-        gulp.src('app/css/my-icons.scss')
-          .pipe(consolidate('lodash', {
-            glyphs: glyphs,
-            fontName: 'myIcons',
-            fontPath: 'app/fonts/',
-            className: 's',
-            // fontRound: 2000,
-            normalize: true,
-            fontHeight: 1001
-
-          }))
-          .pipe(gulp.dest('app/css/'))
-          .on('finish', cb);
-      });
-    },
-    function handleFonts (cb) {
-      iconStream
-        .pipe(gulp.dest('app/fonts/'))
-        .on('finish', cb);
-    }
-  ], done);
 });
 
 // Generate the icons. This task takes a few seconds to complete.
@@ -167,11 +142,11 @@ gulp.task('inject-favicon-markups', function() {
 });
 
 
-gulp.task('svg', function(){
-  return gulp.src(['app/img/icons/**/*.svg'])
-      .pipe(svgmin())
-      .pipe(gulp.dest('app/img/icons'));
-});
+// gulp.task('svg', function(){
+//   return gulp.src(['app/img/icons/**/*.svg'])
+//       .pipe(svgmin())
+//       .pipe(gulp.dest('app/img/icons'));
+// });
 
 // Check for updates on RealFaviconGenerator (think: Apple has just
 // released a new Touch icon along with the latest version of iOS).
@@ -186,11 +161,11 @@ gulp.task('check-for-favicon-update', function(done) {
 	});
 });
 
-gulp.task('watch', ['browser-sync', 'css-libs', 'svg', 'scripts'], function() {
+gulp.task('watch', ['browser-sync', 'css-libs', 'scripts'], function() {
     gulp.watch('app/scss/**/*.scss', ['sass']); // Наблюдение за sass файлами в папке sass
     gulp.watch('app/*.html', browserSync.reload); // Наблюдение за HTML файлами в корне проекта
     gulp.watch('app/js/**/*.js', browserSync.reload);   // Наблюдение за JS файлами в папке js
-    gulp.watch('app/img/icons/**/*.svg');
+    // gulp.watch('app/img/icons/**/*.svg');
 });
 
 gulp.task('clean', function() {
@@ -202,7 +177,7 @@ gulp.task('img', function() {
         .pipe(cache(imagemin({  // Сжимаем их с наилучшими настройками с учетом кеширования
             interlaced: true,
             progressive: true,
-            svgoPlugins: [{removeViewBox: false}],
+            // svgoPlugins: [{removeViewBox: false}],
             use: [pngquant()]
         })))
         .pipe(gulp.dest('dist/img')); // Выгружаем на продакшен

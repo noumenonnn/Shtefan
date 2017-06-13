@@ -1,0 +1,26 @@
+.ui-social {
+  background-color: transparent;
+  bottom: 0;
+  left: 0;
+  margin: (v-rithm(1.5) + 9px) v-rithm(1.5);
+  padding: 7px 26px 0;
+  position: fixed;
+  transition: all $animation-default-function;
+  z-index: z(ui-elem);
+
+  a {
+    line-height: 1;
+    text-align: center;
+  }
+
+  &.on-backround {
+    background-color: $color-hunter-green-67;
+    border-radius: 24px;
+  }
+
+  :last-child {
+    span::before {
+      margin-right: 0;
+    }
+  }
+}
