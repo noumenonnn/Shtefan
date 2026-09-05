@@ -1,36 +1,34 @@
 @charset 'UTF-8';
 
 // 1. Configuration and helpers
-@import
-  'abstracts/variables',
-  'abstracts/mixins';
+@use 'abstracts/variables';
+@use 'abstracts/mixins';
 
 // 2. Vendors
-@import
-  'vendors/reset',
-  'vendors/animate',
-  'vendors/debug';
+@use 'vendors/reset';
+@use 'vendors/animate';
+@use 'vendors/debug';
 
 // 3. Base stuff
-@import
-  'base/base',
-  'base/fonts',
-  'base/typography',
-  'base/helpers',
-  'base/icons';
+@use 'base/base';
+@use 'base/fonts';
+@use 'base/typography';
+@use 'base/helpers';
+@use 'base/icons';
 
 // 4. Layout-related sections
-@import
-  'layout/ui-menu',
-  'layout/header',
-  'layout/ui-elements';
+@use 'layout/ui-menu';
+@use 'layout/header';
+@use 'layout/ui-elements';
 
 // 5. Components
-@import
-  'components/buttons',
-  'components/links',
-  'components/dividers';
+@use 'components/buttons';
+@use 'components/links';
+@use 'components/dividers';
 
 // 6. Page-specific styles
-@import
-  'pages/index';
+@use 'pages/index';
+@use 'pages/inner';
+
+// 7. Responsive adjustments
+@use 'layout/responsive';

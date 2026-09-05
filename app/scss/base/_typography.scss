@@ -1,3 +1,7 @@
+@use "../abstracts/mixins";
+@use "../abstracts/variables";
+@use "../components/dividers";
+
 //
 // Typography
 // --------------------------------------------------
@@ -5,11 +9,11 @@
 // -------------------------
 
 html {
-  color: $text-color;
-  font-family: $body-font-family;
-  font-size: $font-size-base;
-  font-weight: $body-font-weight;
-  line-height: $line-height-base;
+  color: variables.$text-color;
+  font-family: variables.$body-font-family;
+  font-size: variables.$font-size-base;
+  font-weight: variables.$body-font-weight;
+  line-height: variables.$line-height-base;
 }
 // Headings
 // -------------------------
@@ -26,43 +30,43 @@ h3,
 h4,
 h5,
 h6 {
-  color: $headings-color;
-  font-family: $headings-font-family;
-  font-weight: $headings-font-weight;
+  color: variables.$headings-color;
+  font-family: variables.$headings-font-family;
+  font-weight: variables.$headings-font-weight;
 }
 
 .h1,
 h1 {
-  @include type-setting(3);
-  margin-bottom: v-rithm(1);
-  margin-top: v-rithm(1);
+  @include mixins.type-setting(3);
+  margin-bottom: mixins.v-rithm(1);
+  margin-top: mixins.v-rithm(1);
 }
 
 .h2,
 h2 {
-  @include type-setting(2);
-  margin-bottom: v-rithm(1);
-  margin-top: v-rithm(1);
+  @include mixins.type-setting(2);
+  margin-bottom: mixins.v-rithm(1);
+  margin-top: mixins.v-rithm(1);
 }
 
 .h3,
 h3 {
-  @include type-setting(1);
-  margin-bottom: v-rithm(1 / 2);
-  margin-top: v-rithm(1 / 2);
+  @include mixins.type-setting(1);
+  margin-bottom: mixins.v-rithm(1 * 0.5);
+  margin-top: mixins.v-rithm(1 * 0.5);
 }
 
 .h4,
 h4 {
-  @include type-setting(0);
-  margin-bottom: v-rithm(1 / 2);
-  margin-top: v-rithm(1 / 2);
+  @include mixins.type-setting(0);
+  margin-bottom: mixins.v-rithm(1 * 0.5);
+  margin-top: mixins.v-rithm(1 * 0.5);
 }
 // Body text
 // -------------------------
 
 p {
-  margin: 0 0 v-rithm(1 / 2);
+  margin: 0 0 mixins.v-rithm(1 * 0.5);
 }
 
 hr {
@@ -72,30 +76,30 @@ hr {
 }
 
 .caption {
-  font-size: $font-size-very-small;
-  margin: 0 0 v-rithm(1 / 2);
+  font-size: variables.$font-size-very-small;
+  margin: 0 0 mixins.v-rithm(1 * 0.5);
 }
 
 .label {
-  font-family: $font-family-secondary;
-  font-size: $font-size-small;
+  font-family: variables.$font-family-secondary;
+  font-size: variables.$font-size-small;
   font-stretch: normal;
   font-style: normal;
-  font-weight: $font-weight-bold;
+  font-weight: variables.$font-weight-bold;
   letter-spacing: 2.3px;
-  line-height: $line-height-base;
+  line-height: variables.$line-height-base;
 
   &.accent {
-    color: $color-golden;
+    color: variables.$color-golden;
   }
 }
 
 %accent-text {
-  color: $color-beige;
-  font-family: $font-family-accent;
-  font-size: type-scale(1);
+  color: variables.$color-beige;
+  font-family: variables.$font-family-accent;
+  font-size: mixins.type-scale(1);
   font-stretch: normal;
   font-style: normal;
-  font-weight: $font-weight-medium;
+  font-weight: variables.$font-weight-medium;
   letter-spacing: .3px;
 }

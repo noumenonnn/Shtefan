@@ -1,3 +1,10 @@
+@use "../abstracts/mixins";
+@use "../abstracts/variables";
+@use "../base/helpers";
+@use "../base/typography";
+
+@use "sass:math";
+
 .main-screen {
   background-image: url('../../img/background-main-screen@2x.jpg');
   background-repeat: no-repeat;
@@ -6,17 +13,18 @@
 
   .content {
     @extend %content-full-screen;
+    justify-content: center;
   }
 }
 
 .shtefan-cover {
-  border: solid 1px $color-golden;
-  border-radius: $border-radius-default;
+  border: solid 1px variables.$color-golden;
+  border-radius: variables.$border-radius-default;
   position: relative;
 
   .inner-border {
-    border: solid 1px $color-golden;
-    border-radius: $border-radius-default / 2;
+    border: solid 1px variables.$color-golden;
+    border-radius: variables.$border-radius-default * 0.5;
     bottom: 0;
     height: 98%;
     left: 1%;
@@ -25,12 +33,12 @@
     right: 0;
     top: 1%;
     width: 98%;
-    z-index: z(below);
+    z-index: mixins.z(below);
   }
 }
 
 .cover-inner {
-  margin: v-rithm(2) v-rithm(3);
+  margin: mixins.v-rithm(2) mixins.v-rithm(3);
   text-align: center;
   width: 300px;
 
@@ -41,23 +49,23 @@
 
     .since {
       @extend .label;
-      border-bottom: solid 1px $color-beige-24;
-      border-top: solid 1px $color-beige-24;
-      line-height: $line-height-base - 2;
+      border-bottom: solid 1px variables.$color-beige-24;
+      border-top: solid 1px variables.$color-beige-24;
+      line-height: variables.$line-height-base - 2;
       width: 89px;
     }
   }
 
   h1 {
-    margin-bottom: v-rithm(1);
-    margin-top: v-rithm(1 / 2);
+    margin-bottom: mixins.v-rithm(1);
+    margin-top: mixins.v-rithm(1 * 0.5);
   }
 
   p {
-    border-bottom: solid 1px $color-beige-24;
-    border-top: solid 1px $color-beige-24;
-    margin-bottom: v-rithm(1);
-    padding: v-rithm(1 / 2) 0;
+    border-bottom: solid 1px variables.$color-beige-24;
+    border-top: solid 1px variables.$color-beige-24;
+    margin-bottom: mixins.v-rithm(1);
+    padding: mixins.v-rithm(1 * 0.5) 0;
   }
 }
 
@@ -66,13 +74,13 @@
 
   section {
     background-color: transparent;
-    border-radius: $border-radius-default;
-    padding: v-rithm(1);
-    transition: all $animation-default-function;
+    border-radius: variables.$border-radius-default;
+    padding: mixins.v-rithm(1);
+    transition: all variables.$animation-default-function;
     width: 280px;
 
-    @include hocus {
-      background-color: $color-hunter-green-67;
+    @include mixins.hocus {
+      background-color: variables.$color-hunter-green-67;
     };
 
   }
@@ -89,25 +97,25 @@
 
     div {
       @extend %accent-text;
-      color: $color-golden;
+      color: variables.$color-golden;
     }
   }
 
   .address {
-    margin-bottom: v-rithm(1 / 2);
+    margin-bottom: mixins.v-rithm(1 * 0.5);
     text-align: center;
 
     .h1 {
       margin-bottom: 0;
-      margin-top: v-rithm(1 / 2);
+      margin-top: mixins.v-rithm(1 * 0.5);
     }
   }
 
   .street {
-    border-bottom: solid 1px $color-beige-24;
-    border-top: solid 1px $color-beige-24;
-    margin-bottom: v-rithm(1 / 2);
-    padding: v-rithm(1 / 2) 0;
+    border-bottom: solid 1px variables.$color-beige-24;
+    border-top: solid 1px variables.$color-beige-24;
+    margin-bottom: mixins.v-rithm(1 * 0.5);
+    padding: mixins.v-rithm(1 * 0.5) 0;
     text-align: center;
 
 
@@ -119,8 +127,113 @@
 
   .work-hours,
   .phone {
-    padding: 0 round(v-rithm(1 / 3));
+    padding: 0 math.round(mixins.v-rithm(math.div(1, 3)));
   }
+}
+
+.restaurants {
+  background:
+    radial-gradient(circle at 50% 0, rgba(239, 181, 4, .09), transparent 32rem),
+    variables.$background-color;
+  min-height: 100vh;
+
+  .content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-height: 100vh;
+    padding-bottom: mixins.v-rithm(3.5);
+    padding-top: mixins.v-rithm(3.5);
+  }
+}
+
+.restaurants-heading {
+  margin: 0 auto mixins.v-rithm(2);
+  max-width: 760px;
+  text-align: center;
+
+  h1 {
+    font-size: clamp(3rem, 7vw, 5.4rem);
+    line-height: 1;
+    margin: mixins.v-rithm(.5) 0;
+  }
+
+  p {
+    color: variables.$color-beige-54;
+  }
+}
+
+.restaurants-grid {
+  display: grid;
+  gap: mixins.v-rithm(1);
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  margin: 0 auto;
+  max-width: 980px;
+  width: 100%;
+}
+
+.restaurant-card {
+  background: variables.$background-color-accent;
+  border: 1px solid variables.$color-golden;
+  border-radius: variables.$border-radius-default;
+  display: flex;
+  flex-direction: column;
+  min-height: 470px;
+  overflow: hidden;
+  padding: mixins.v-rithm(1.5);
+  position: relative;
+  transition: background-color variables.$animation-default-function,
+    transform variables.$animation-default-function;
+
+  &::after {
+    border: 1px solid rgba(239, 181, 4, .24);
+    border-radius: variables.$border-radius-default * .6;
+    content: '';
+    inset: 7px;
+    pointer-events: none;
+    position: absolute;
+  }
+
+  &:hover {
+    background: variables.$color-hunter-green-67;
+    color: variables.$text-color;
+    transform: translateY(-6px);
+  }
+
+  strong {
+    color: variables.$color-beige;
+    font-family: variables.$font-family-accent;
+    font-size: clamp(2.3rem, 5vw, 4rem);
+    font-weight: variables.$font-weight-medium;
+    line-height: 1;
+    margin: mixins.v-rithm(.5) 0;
+    transform: rotate(-3deg);
+  }
+}
+
+.restaurant-card-number {
+  color: variables.$color-beige;
+  font-family: variables.$headings-font-family;
+  font-size: clamp(5rem, 10vw, 8rem);
+  line-height: .85;
+  margin-bottom: mixins.v-rithm(1);
+}
+
+.restaurant-hours {
+  color: variables.$color-beige-54;
+  line-height: 1.55;
+}
+
+.restaurant-phone {
+  color: variables.$color-beige;
+  margin-top: mixins.v-rithm(.5);
+}
+
+.restaurant-card-link {
+  border-top: 1px solid variables.$color-beige-24;
+  color: variables.$color-golden;
+  margin-top: auto;
+  padding-top: mixins.v-rithm(.5);
 }
 
 .who-is-shtefan {
@@ -131,7 +244,7 @@
 
   .content {
     @extend %content-full-screen;
-    max-width: $layout-content-max-width-default;
+    max-width: variables.$layout-content-max-width-default;
   }
 }
 
@@ -149,7 +262,7 @@
     width: 38.294%;
 
     p {
-      margin: v-rithm(1) 0;
+      margin: mixins.v-rithm(1) 0;
     }
   }
 }
@@ -165,7 +278,7 @@
     }
 
     .description {
-      padding: 0 v-rithm(1.5);
+      padding: 0 mixins.v-rithm(1.5);
       width: 48.578%;
     }
   }
@@ -194,16 +307,16 @@
   }
 
   .description {
-    padding-left: v-rithm(2.5);
+    padding-left: mixins.v-rithm(2.5);
     width: 53.421%;
 
     h1 {
-      margin: v-rithm(1.5) 0;
+      margin: mixins.v-rithm(1.5) 0;
     }
 
     p {
-      margin-left: v-rithm(2.5);
-      margin-top: v-rithm(2.5);
+      margin-left: mixins.v-rithm(2.5);
+      margin-top: mixins.v-rithm(2.5);
       width: 69.491%;
     }
   }
@@ -211,22 +324,22 @@
 
 .service {
   h1 {
-    margin-bottom: v-rithm(3);
+    margin-bottom: mixins.v-rithm(3);
     margin-top: 0;
     text-align: center;
   }
 }
 
 .service-inner {
-  @include center-block();
+  @include mixins.center-block();
   max-width: 950px;
 
   .image {
     float: left;
-    margin-bottom: v-rithm(2.5);
+    margin-bottom: mixins.v-rithm(2.5);
   }
 
   :nth-child(2) {
-    margin-top: v-rithm(8);
+    margin-top: mixins.v-rithm(8);
   }
 }

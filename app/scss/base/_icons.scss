@@ -1,3 +1,6 @@
+@use "../abstracts/mixins";
+@use "../abstracts/variables";
+
 @font-face {
   font-family: 'icons';
   src: url('../../fonts/icons.eot?20993520');
@@ -38,27 +41,27 @@ $icons-margin-social: .3em;
 
 .icon-burger::before {
   content: '\e900';
-  font-size: v-rithm(1);
+  font-size: mixins.v-rithm(1);
 }
 
 .icon-salad::before {
   content: '\e901';
-  font-size: v-rithm(1);
+  font-size: mixins.v-rithm(1);
 }
 
 .icon-beer::before {
   content: '\e902';
-  font-size: v-rithm(1);
+  font-size: mixins.v-rithm(1);
 }
 
 .icon-drinks::before {
   content: '\e903';
-  font-size: v-rithm(1);
+  font-size: mixins.v-rithm(1);
 }
 
 .icon-dessert::before {
   content: '\e904';
-  font-size: v-rithm(1);
+  font-size: mixins.v-rithm(1);
 }
 
 .icon-navigation-arrow::before {
@@ -100,21 +103,21 @@ $icons-margin-social: .3em;
 }
 
 .icon-arrow-divided-right-before::before {
-  color: $color-beige-24;
+  color: variables.$color-beige-24;
   content: '\e90c';
-  font-size: $font-size-base * .523809523809524;
+  font-size: variables.$font-size-base * .523809523809524;
 }
 
 .icon-arrow-divided-right-after::before {
-  color: $color-beige-24;
+  color: variables.$color-beige-24;
   content: '\e90d';
-  font-size: $font-size-base * .523809523809524;
+  font-size: variables.$font-size-base * .523809523809524;
 }
 
 .icon-arrow-left::before {
-  color: $color-beige-24;
+  color: variables.$color-beige-24;
   content: '\e90e';
-  font-size: $font-size-base * .523809523809524;
+  font-size: variables.$font-size-base * .523809523809524;
 }
 
 .icon-arrow-simple-up::before {

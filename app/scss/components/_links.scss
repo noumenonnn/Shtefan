@@ -1,17 +1,20 @@
+@use "../abstracts/mixins";
+@use "../abstracts/variables";
+
 %link {
   display: inline-block;
 }
 
 .scotch-link {
   @extend %link;
-  @include scotch-link-theme($link-color);
-  transition: all $animation-default-function;
+  @include mixins.scotch-link-theme(variables.$link-color);
+  transition: all variables.$animation-default-function;
 
   &.neutral {
-    @include scotch-link-theme($link-color-neutral);
+    @include mixins.scotch-link-theme(variables.$link-color-neutral);
 
     &:hover {
-      color: $link-color-neutral-hover;
+      color: variables.$link-color-neutral-hover;
     }
   }
 }

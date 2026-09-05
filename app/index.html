@@ -3,23 +3,20 @@
 
 <head>
     <meta charset="utf-8">
-    <title></title>
-    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
-    <meta name="description" content="">
-    <meta name="keywords" content="">
+    <title>Штефан Бургер</title>
+    <meta name="description" content="Штефан Бургер — сеть бургерных в Ростове-на-Дону.">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/main.css">
-    <link rel="apple-touch-icon" sizes="180x180" href="app/img/icons/favicons/apple-touch-icon.png">
-    <link rel="icon" type="image/png" href="app/img/icons/favicons/favicon-32x32.png" sizes="32x32">
-    <link rel="icon" type="image/png" href="app/img/icons/favicons/favicon-16x16.png" sizes="16x16">
-    <link rel="manifest" href="app/img/icons/favicons/manifest.json">
-    <link rel="mask-icon" href="app/img/icons/favicons/safari-pinned-tab.svg" color="#0c311a">
-    <link rel="shortcut icon" href="app/img/icons/favicons/favicon.ico">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" href="/favicon-32x32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="/favicon-16x16.png" sizes="16x16">
+    <link rel="manifest" href="/manifest.json">
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#0c311a">
+    <link rel="shortcut icon" href="/favicon.ico">
     <meta name="apple-mobile-web-app-title" content="Stefan Burger">
     <meta name="application-name" content="Stefan Burger">
     <meta name="msapplication-TileColor" content="#0c311a">
-    <meta name="msapplication-TileImage" content="app/img/icons/favicons/mstile-144x144.png">
-    <meta name="msapplication-config" content="app/img/icons/favicons/browserconfig.xml">
+    <meta name="msapplication-TileImage" content="/mstile-144x144.png">
+    <meta name="msapplication-config" content="/browserconfig.xml">
     <meta name="theme-color" content="#ffffff">
 </head>
 
@@ -41,67 +38,44 @@
               </header>
               <h1>Штефан Бургер</h1>
               <p>Лучшая в Ростове-на-Дону сеть бургерых с историей</p>
-              <button type="button" class="scotch-button">Меню ресторана</button>
+              <a class="scotch-button" href="/menu.html">Меню ресторана</a>
             </div>
             <div class="inner-border"></div>
-          </div>
-          <!-- Contact info blocks -->
-          <div class="main-screen-contacts">
-            <section>
-              <div class="num">
-                <span class="icon-arrow-divided-right-before"></span>
-                <div>№</div>
-                <span class="icon-arrow-divided-right-after"></span>
-              </div>
-              <div class="address">
-                <div class="h1">101</div>
-                <div class="label accent">УЛ. ПУШКИНСКАЯ</div>
-              </div>
-              <div class="street"><div>Пушкинская</div></div>
-              <div class="work-hours">
-                <div class="label accent">РЕЖИМ РАБОТЫ</div>
-                <p>ВС—ЧТ,&nbsp;11:00—24:00
-                  ПТ—СБ,&nbsp;11:00—1:00</p>
-              </div>
-              <div class="phone">
-                <div class="label accent">ТЕЛЕФОН</div>
-                <a class="scotch-link" href="tel:88632266690">8&nbsp;(863)&nbsp;22&nbsp;666&nbsp;90</a>
-              </div>
-              <div class="icon-arrow-left"></div>
-            </section>
-            <section>
-              <div class="num">
-                <span class="icon-arrow-divided-right-before"></span>
-                <div>№</div>
-                <span class="icon-arrow-divided-right-after"></span>
-              </div>
-              <div class="address">
-                <div class="h1">19</div>
-                <div class="label accent">ПЕР. СОБОРНЫЙ</div>
-              </div>
-              <div class="street"><div>пер. Соборный</div></div>
-              <div class="work-hours">
-                <div class="label accent">РЕЖИМ РАБОТЫ</div>
-                <p>ВС—ЧТ,&nbsp;11:00—24:00
-                  ПТ—СБ,&nbsp;11:00—1:00</p>
-              </div>
-              <div class="phone">
-                <div class="label accent">ТЕЛЕФОН</div>
-                <a class="scotch-link" href="tel:88632214883">8&nbsp;(863)&nbsp;22&nbsp;148&nbsp;83</a>
-              </div>
-              <div class="icon-arrow-left"></div>
-            </section>
           </div>
         </div>
         <div class="ui-mouse-scroll">
           <span class="icon-mouse"></span>
         </div>
-        <div class="ui-menu-button">
-          <div class="nav-toggle-line"></div>
-          <div class="nav-toggle-line"></div>
-          <div class="nav-toggle-line"></div>
-        </div>
         <div class="ui-career-link"><a class="scotch-link neutral" href="javascript:void(0);">Вакансии</a></div>
+      </section>
+
+      <!-- Restaurants -->
+      <section id="restaurants" data-panel="restaurants" class="screen restaurants">
+        <div class="content">
+          <header class="restaurants-heading">
+            <span class="label accent">РОСТОВ-НА-ДОНУ</span>
+            <h1>Наши бургерные</h1>
+            <p>Два места с характером Штефана. Выбирайте то, что ближе.</p>
+          </header>
+          <div class="restaurants-grid">
+            <a class="restaurant-card" href="/pushkinskaya.html">
+              <span class="restaurant-card-number">101</span>
+              <span class="label accent">УЛ. ПУШКИНСКАЯ</span>
+              <strong>Пушкинская</strong>
+              <span class="restaurant-hours">ВС—ЧТ, 11:00—24:00<br>ПТ—СБ, 11:00—1:00</span>
+              <span class="restaurant-phone">8 (863) 22 666 90</span>
+              <span class="restaurant-card-link">Подробнее о ресторане →</span>
+            </a>
+            <a class="restaurant-card" href="/soborny.html">
+              <span class="restaurant-card-number">19</span>
+              <span class="label accent">ПЕР. СОБОРНЫЙ</span>
+              <strong>Соборный</strong>
+              <span class="restaurant-hours">ВС—ЧТ, 11:00—24:00<br>ПТ—СБ, 11:00—1:00</span>
+              <span class="restaurant-phone">8 (863) 22 148 83</span>
+              <span class="restaurant-card-link">Подробнее о ресторане →</span>
+            </a>
+          </div>
+        </div>
       </section>
 
       <!-- History section -->
@@ -184,14 +158,25 @@
       </section>
 
       <!-- Menu -->
-      <div class="ui-menu hide animated">
+      <div class="ui-mobile-header">
+        <a class="ui-mobile-logo" href="#" aria-label="На главную">
+          <img src="/img/icons/logo.svg" width="79" height="103" alt="">
+        </a>
+        <button class="ui-menu-button" type="button" aria-label="Открыть меню" aria-controls="site-menu" aria-expanded="false">
+          <span class="nav-toggle-line"></span>
+          <span class="nav-toggle-line"></span>
+          <span class="nav-toggle-line"></span>
+        </button>
+      </div>
+
+      <div id="site-menu" class="ui-menu hide animated" aria-hidden="true">
         <nav>
           <ul>
-            <li><a href data-panel="main-screen" class="scotch-link">Наши бургерные</a></li>
+            <li><a href="#restaurants" data-panel="restaurants" class="scotch-link">Наши бургерные</a></li>
             <li><a href data-panel="who-is-shtefan" class="scotch-link">История</a></li>
-            <li><a href data-panel="" class="scotch-link">Меню</a></li>
-            <li><a href data-panel="" class="scotch-link">Отзывы</a></li>
-            <li><a href data-panel="" class="scotch-link">Новости</a></li>
+            <li><a href="/menu.html" class="scotch-link">Меню</a></li>
+            <li><a href="/reviews.html" class="scotch-link">Отзывы</a></li>
+            <li><a href="/news.html" class="scotch-link">Новости</a></li>
           </ul>
         </nav>
       </div>
@@ -215,8 +200,7 @@
       </div>
     </div>
 
-    <script src="js/libs.min.js" type="text/javascript"></script>
-    <script src="js/main.js" type="text/javascript"></script>
+    <script type="module" src="/src/main.ts"></script>
 </body>
 
 </html>

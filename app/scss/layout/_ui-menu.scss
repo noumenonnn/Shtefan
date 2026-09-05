@@ -1,11 +1,14 @@
+@use "../abstracts/mixins";
+@use "../abstracts/variables";
+
 .ui-menu {
   left: 0;
-  margin: v-rithm(2) 0 v-rithm(1);
+  margin: mixins.v-rithm(2) 0 mixins.v-rithm(1);
   position: fixed;
   top: 0;
-  transition: all $animation-default-function;
+  transition: all variables.$animation-default-function;
   width: 100vw;
-  z-index: z(ui-elem);
+  z-index: mixins.z(ui-elem);
 
   nav {
 
@@ -17,10 +20,10 @@
     li {
       a {
         line-height: 1;
-        padding: v-rithm(1 / 2) (v-rithm(1) + 10px);
+        padding: mixins.v-rithm(1 * 0.5) (mixins.v-rithm(1) + 10px);
 
         &.active {
-          color: $color-golden;
+          color: variables.$color-golden;
         }
       }
     }

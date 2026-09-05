@@ -1,22 +1,27 @@
+@use "../abstracts/mixins";
+@use "../abstracts/variables";
+
+@use "sass:math";
+
 %button {
-  border-radius: $button-border-radius;
+  border-radius: variables.$button-border-radius;
   display: inline-block;
-  font-family: $body-font-family;
-  font-size: $font-size-base;
-  font-weight: $body-font-weight;
-  padding: round(v-rithm(1 / 3) + 2px) v-rithm(1) round(v-rithm(1 / 3) + 1px);
-  transition: all  $animation-default-function;
+  font-family: variables.$body-font-family;
+  font-size: variables.$font-size-base;
+  font-weight: variables.$body-font-weight;
+  padding: math.round(mixins.v-rithm(math.div(1, 3)) + 2px) mixins.v-rithm(1) math.round(mixins.v-rithm(math.div(1, 3)) + 1px);
+  transition: all  variables.$animation-default-function;
 }
 
 .scotch-button {
   @extend %button;
-  @include scotch-button-theme($button-color);
+  @include mixins.scotch-button-theme(variables.$button-color);
 
   &.ghost {
-    border: 1px solid $button-color;
+    border: 1px solid variables.$button-color;
 
     &:hover {
-      background-color: $button-color;
+      background-color: variables.$button-color;
     }
   }
 }

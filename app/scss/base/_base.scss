@@ -1,3 +1,6 @@
+@use "../abstracts/mixins";
+@use "../abstracts/variables";
+
 // -----------------------------------------------------------------------------
 // This file contains very basic styles.
 // -----------------------------------------------------------------------------
@@ -11,7 +14,7 @@ html {
 }
 
 body {
-  background-color: $background-color;
+  background-color: variables.$background-color;
 }
 
 main {
@@ -31,11 +34,11 @@ svg {
 }
 
 a {
-  color: $text-color;
+  color: variables.$text-color;
   text-decoration: none;
 
-  @include hocus {
-    color: $link-color-hover;
+  @include mixins.hocus {
+    color: variables.$link-color-hover;
     text-decoration: none;
   }
 }

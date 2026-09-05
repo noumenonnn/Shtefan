@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Новости, события и новинки Штефан Бургер.">
+  <meta name="theme-color" content="#04150b">
+  <title>Новости — Штефан Бургер</title>
+  <link rel="icon" type="image/png" href="/favicon-32x32.png" sizes="32x32">
+</head>
+<body class="inner-page">
+  <header class="site-header">
+    <a class="site-brand" href="/" aria-label="Штефан Бургер — на главную">
+      <img src="/img/icons/logo.svg" width="79" height="103" alt="">
+      <span>Штефан Бургер</span>
+    </a>
+    <button class="page-menu-button" type="button" aria-label="Открыть меню" aria-controls="page-navigation" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+    <nav id="page-navigation" class="site-nav" aria-label="Основная навигация">
+      <ul>
+        <li><a href="/">Главная</a></li>
+        <li><a href="/#restaurants">Рестораны</a></li>
+        <li><a href="/menu.html">Меню</a></li>
+        <li><a href="/reviews.html">Отзывы</a></li>
+        <li><a class="active" href="/news.html" aria-current="page">Новости</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="inner-main">
+    <section class="inner-hero">
+      <div class="inner-container">
+        <div class="inner-hero-content">
+          <span class="inner-kicker">Жизнь Штефана</span>
+          <h1>Новости</h1>
+          <p>Новые блюда, вечеринки, коллаборации и всё интересное, что происходит в наших бургерных.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="inner-section">
+      <div class="inner-container">
+        <header class="section-heading" data-reveal>
+          <div><span class="inner-kicker">Свежие истории</span><h2>Последнее</h2></div>
+          <p>Следите за событиями и приходите пробовать новое.</p>
+        </header>
+        <div class="news-grid">
+          <article class="news-card" data-reveal>
+            <div class="news-card-image"><img src="/img/content/img-cook-1.jpg" alt="Повар Штефан Бургер за работой"></div>
+            <span class="news-date">12 августа · Меню</span>
+            <h2>Новый сезон — новый бургер</h2>
+            <p>Добавили дымный соус, хрустящий лук и локальные овощи. Новинка уже доступна в обеих бургерных.</p>
+          </article>
+          <article class="news-card" data-reveal>
+            <div class="news-card-image"><img src="/img/content/img-cook-2.jpg" alt="Команда на кухне"></div>
+            <span class="news-date">28 июля · Команда</span>
+            <h2>Знакомьтесь: кухня Штефана</h2>
+            <p>Рассказываем о людях, которые каждый день отвечают за тот самый вкус.</p>
+          </article>
+          <article class="news-card" data-reveal>
+            <div class="news-card-image"><img src="/img/content/img-old-days-1.jpg" alt="История Штефана"></div>
+            <span class="news-date">5 июля · История</span>
+            <h2>Как всё начиналось</h2>
+            <p>Вспоминаем первые эскизы, первые рецепты и путь от идеи до любимой бургерной.</p>
+          </article>
+          <article class="news-card" data-reveal>
+            <div class="news-card-image"><img src="/img/content/img-cook-4.jpg" alt="Приготовление блюда на кухне"></div>
+            <span class="news-date">21 июня · События</span>
+            <h2>Летние вечера на Соборном</h2>
+            <p>Музыка, прохладные лимонады и специальное меню по пятницам.</p>
+          </article>
+          <article class="news-card" data-reveal>
+            <div class="news-card-image"><img src="/img/content/img-about-shtefan-1.jpg" alt="Фирменный интерьер Штефан Бургер"></div>
+            <span class="news-date">8 июня · Место</span>
+            <h2>Детали, которые создают атмосферу</h2>
+            <p>Показываем интерьер, фирменную графику и любимые уголки наших гостей.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="inner-section inner-section-accent">
+      <div class="inner-container">
+        <div class="inner-cta" data-reveal>
+          <span class="inner-kicker">Всегда на связи</span>
+          <h2>Больше новостей</h2>
+          <p>Анонсы событий и блюда дня первыми появляются в наших социальных сетях.</p>
+          <a class="scotch-button" href="http://vk.com">Подписаться</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="inner-footer">
+    <div class="inner-container inner-footer-content">
+      <span class="inner-footer-copy">© Штефан Бургер · Ростов-на-Дону</span>
+      <nav class="inner-footer-links" aria-label="Социальные сети">
+        <a class="scotch-link neutral" href="http://vk.com">ВКонтакте</a>
+        <a class="scotch-link neutral" href="http://instagram.com">Instagram</a>
+      </nav>
+    </div>
+  </footer>
+  <script type="module" src="/src/inner-page.ts"></script>
+</body>
+</html>

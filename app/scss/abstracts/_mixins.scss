@@ -1,25 +1,32 @@
+@use "sass:map";
+@use "sass:meta";
+@use "sass:string";
+@use "variables";
+
 // Mixins
 // --------------------------------------------------
 
 //== Typography
 
 /// Line height calculate
+@use "sass:math";
+
 @function line-height($level) {
-  @return map-get($line-heights, $level);
+  @return map.get(variables.$line-heights, $level);
 }
 
 /// Font size calculate
-@function type-scale($level, $base: $font-size-base, $ratio: $font-scale-ratio) {
+@function type-scale($level, $base: variables.$font-size-base, $ratio: variables.$font-scale-ratio) {
   $size: $base;
   @for $i from 0 to $level {
     $size: $size * $ratio;
   }
-  @return $size / $font-size-base * 1rem;
+  @return math.div($size, variables.$font-size-base) * 1rem;
 }
 
 /// Type settings up (Font size + Line height)
-@mixin type-setting($level, $base: $font-size-base, $ratio: $font-scale-ratio) {
-  font-size: type-scale($level, $base: $font-size-base, $ratio: $font-scale-ratio);
+@mixin type-setting($level, $base: variables.$font-size-base, $ratio: variables.$font-scale-ratio) {
+  font-size: type-scale($level, $base: variables.$font-size-base, $ratio: variables.$font-scale-ratio);
   line-height: line-height($level);
 }
 
@@ -35,7 +42,7 @@
 //== Themes
 
 /// Buttons theme
-@mixin scotch-button-theme($color, $text-color-hover: $button-color-text-hover) {
+@mixin scotch-button-theme($color, $text-color-hover: variables.$button-color-text-hover) {
   color: $color;
   background-color: transparent;
   cursor: pointer;
@@ -54,7 +61,7 @@
   color: $color;
 
   &:hover {
-    color: $link-color-hover;
+    color: variables.$link-color-hover;
   }
 }
 
@@ -69,13 +76,13 @@
 
 /// Get a z-index value from a layer name
 @function z($layer) {
-  @return map-get($z-indexes, $layer);
+  @return map.get(variables.$z-indexes, $layer);
 }
 
 /// Vertical rithm calc
 /// $base - $line-height-base  ~24px;
 /// $level {String} - Multiplication factor
-@function v-rithm($level, $base: $line-height-base) {
+@function v-rithm($level, $base: variables.$line-height-base) {
   $size: $base;
   $result: $size * $level;
   @return $result;
@@ -99,13 +106,12 @@
 /// @param {String} $breakpoint - Breakpoint
 /// @requires $breakpoints
 @mixin respond-to($breakpoint) {
-  $raw-query: map-get($breakpoints, $breakpoint);
+  $raw-query: map.get(variables.$breakpoints, $breakpoint);
 
   @if $raw-query {
     $query: if(
-                    type-of($raw-query) == 'string',
-                    unquote($raw-query),
-                    inspect($raw-query)
+                    sass(meta.type-of($raw-query) == 'string'): string.unquote($raw-query);
+                    else: meta.inspect($raw-query)
     );
 
     @media #{$query} {

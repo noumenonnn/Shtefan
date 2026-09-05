@@ -1,30 +1,34 @@
+@use "../abstracts/mixins";
+@use "../abstracts/variables";
+
 .page-wrapper {
-  height: $layout-default-height;
+  height: variables.$layout-default-height;
   left: 0;
   overflow-x: hidden;
   overflow-y: scroll;
   position: absolute;
+  scroll-behavior: smooth;
   top: 0;
-  width: $layout-default-width;
+  width: variables.$layout-default-width;
 }
 
 .screen {
   // height: $layout-default-height;
-  padding-bottom: v-rithm(3.5);
-  padding-top: v-rithm(3.5);
-  width: $layout-default-width;
+  padding-bottom: mixins.v-rithm(3.5);
+  padding-top: mixins.v-rithm(3.5);
+  width: variables.$layout-default-width;
 }
 //Настройка ширины контента
 .content {
-  @include center-block();
-  max-width: $layout-content-max-width-default;
-  padding-left: v-rithm(1);
-  padding-right: v-rithm(1);
-  padding-top: v-rithm(4);
-  z-index: z(default);
+  @include mixins.center-block();
+  max-width: variables.$layout-content-max-width-default;
+  padding-left: mixins.v-rithm(1);
+  padding-right: mixins.v-rithm(1);
+  padding-top: mixins.v-rithm(4);
+  z-index: mixins.z(default);
 
   * {
-    z-index: z(default);
+    z-index: mixins.z(default);
   }
 }
 //Настройка ширины контента для full height экранов
@@ -33,9 +37,9 @@
   display: flex;
   height: 100%;
   justify-content: space-between;
-  max-width: $layout-content-max-width-full;
+  max-width: variables.$layout-content-max-width-full;
   padding-top: 0;
-  z-index: z(after);
+  z-index: mixins.z(after);
 }
 
 .disabled {

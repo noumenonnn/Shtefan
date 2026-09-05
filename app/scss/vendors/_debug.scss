@@ -1,5 +1,7 @@
+@use "../abstracts/variables";
+
 /*Dev*/
-@if $debug == true {
+@if variables.$debug == true {
 
   * {
     outline: 1px dotted red;

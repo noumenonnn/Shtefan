@@ -1,12 +1,23 @@
+@use "../abstracts/mixins";
+@use "../abstracts/variables";
+
+.ui-mobile-header {
+  display: contents;
+}
+
+.ui-mobile-logo {
+  display: none;
+}
+
 .ui-social {
   background-color: transparent;
   bottom: 0;
   left: 0;
-  margin: (v-rithm(1.5) + 9px) v-rithm(1.5);
+  margin: (mixins.v-rithm(1.5) + 9px) mixins.v-rithm(1.5);
   padding: 7px 26px 0;
   position: fixed;
-  transition: all $animation-default-function;
-  z-index: z(ui-elem);
+  transition: all variables.$animation-default-function;
+  z-index: mixins.z(ui-elem);
 
   a {
     line-height: 1;
@@ -14,7 +25,7 @@
   }
 
   &.on-backround {
-    background-color: $color-hunter-green-67;
+    background-color: variables.$color-hunter-green-67;
     border-radius: 24px;
   }
 
@@ -32,11 +43,11 @@
   animation-name: scroll;
   animation-timing-function: cubic-bezier(.15, .41, .69, .94);
   bottom: 0;
-  color: $color-beige-54;
+  color: variables.$color-beige-54;
   left: 50%;
-  margin: v-rithm(1) 0 (v-rithm(1.5) + 9px) -18px;
+  margin: mixins.v-rithm(1) 0 (mixins.v-rithm(1.5) + 9px) -18px;
   position: absolute;
-  z-index: z(ui-elem);
+  z-index: mixins.z(ui-elem);
 
   @keyframes scroll {
   0% { opacity: 0; }
@@ -46,18 +57,25 @@
 }
 
 .ui-menu-button {
-  color: $color-beige-54;
+  appearance: none;
+  background: transparent;
+  border: 0;
+  color: variables.$color-beige-54;
   cursor: pointer;
-  padding: (v-rithm(2.5) - 5) v-rithm(2.5);
+  padding: (mixins.v-rithm(2.5) - 5) mixins.v-rithm(2.5);
   position: absolute;
   right: 0;
   top: 0;
-  z-index: z(ui-elem);
+  z-index: mixins.z(ui-elem);
 
   .nav-toggle-line {
-    background-color: $color-beige;
+    display: block;
+  }
+
+  .nav-toggle-line {
+    background-color: variables.$color-beige;
     height: 2px;
-    transition: all $animation-default-function;
+    transition: all variables.$animation-default-function;
     width: 38px;
 
 
@@ -70,7 +88,7 @@
     }
   }
 
-  @include hocus {
+  @include mixins.hocus {
     .nav-toggle-line {
 
       &:first-child {
@@ -88,7 +106,7 @@
   bottom: 0;
   position: absolute;
   right: 0;
-  padding: v-rithm(2) v-rithm(2.5);
+  padding: mixins.v-rithm(2) mixins.v-rithm(2.5);
 
 
 }
@@ -96,12 +114,12 @@
 .ui-side-points {
   display: flex;
   height: 510px;
-  margin: 0 v-rithm(2.5);
+  margin: 0 mixins.v-rithm(2.5);
   position: fixed;
   right: 0;
   top: calc(50% - 255px);
-  transition: all $animation-default-function;
-  z-index: z(ui-elem);
+  transition: all variables.$animation-default-function;
+  z-index: mixins.z(ui-elem);
 
   .side-points-inner {
     display: flex;
@@ -110,16 +128,16 @@
   }
 
   .line {
-    margin: v-rithm(1) 0;
+    margin: mixins.v-rithm(1) 0;
   }
 
   a {
-    padding: 0 v-rithm(1 / 2);
+    padding: 0 mixins.v-rithm(1 * 0.5);
     position: relative;
     width: 20px;
 
     &::after {
-      background-color: $color-beige-54;
+      background-color: variables.$color-beige-54;
       bottom: 41%;
       content: '';
       display: block;
@@ -133,14 +151,14 @@
     }
 
     &:hover:after {
-      background-color: $color-beige;
+      background-color: variables.$color-beige;
       transform: scaleX(1) translate3d(-50%, 0, 0);
 
     }
 
     &.active {
       &::after {
-        background-color: $color-golden;
+        background-color: variables.$color-golden;
         height: 2px;
         transform: scaleX(1) translate3d(-50%, 0, 0);
       }
