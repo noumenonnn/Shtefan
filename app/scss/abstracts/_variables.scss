@@ -1,3 +1,5 @@
+@use "sass:color";
+
 //
 // Variables
 // --------------------------------------------------
@@ -15,10 +17,10 @@ $color-pine-green:                     hsl(143, 65%, 8%) !default;
 $color-golden:                         hsl(45, 97%, 48%) !default;
 $color-pumpkin-orange:                 hsl(34, 97%, 48%) !default;
 $color-beige:                          hsl(50, 64%, 81%) !default;
-$color-beige-87:                       transparentize($color-beige, .13) !default;
-$color-beige-54:                       transparentize($color-beige, .46) !default;
-$color-beige-24:                       transparentize($color-beige, .76) !default;
-$color-hunter-green-67:                transparentize($color-hunter-green, .33) !default;
+$color-beige-87:                       color.adjust($color-beige, $alpha: -.13) !default;
+$color-beige-54:                       color.adjust($color-beige, $alpha: -.46) !default;
+$color-beige-24:                       color.adjust($color-beige, $alpha: -.76) !default;
+$color-hunter-green-67:                color.adjust($color-hunter-green, $alpha: -.33) !default;
 
 
 //== Scaffolding
@@ -33,7 +35,7 @@ $background-color-accent:              $color-pine-green !default;
 $text-color:                           $color-beige-87 !default;
 
 //** Global box-shadow variables
-$shadow-color:                         transparentize($color-black, .66) !default;
+$shadow-color:                         color.adjust($color-black, $alpha: -.66) !default;
 $shadow-default:                       0 4px 20px 0 $shadow-color !default;
 
 
@@ -64,9 +66,8 @@ $font-weight-bold:                      800;
 
 $font-size-base:                        21px !default;
 $font-scale-ratio:                      1.5 !default;
-$font-size-large:                       type-scale(3) !default;
-$font-size-large:                       type-scale(2) !default;
-$font-size-medium:                      type-scale(1) !default;
+$font-size-large:                       $font-scale-ratio * $font-scale-ratio * 1rem !default;
+$font-size-medium:                      $font-scale-ratio * 1rem !default;
 $font-size-small:                       $font-size-base * .761904761904762 !default;
 $font-size-very-small:                  $font-size-base * .666666666666667 !default;
 
@@ -125,8 +126,8 @@ $layout-default-width:                   100% !default;
 $layout-default-height:                  100% !default;
 
 // Layout wraper padding's
-$layout-padding-default:                 v-rithm(2) !default;
-$layout-padding-mobile:                  v-rithm(1) !default;
+$layout-padding-default:                 $line-height-base * 2 !default;
+$layout-padding-mobile:                  $line-height-base !default;
 
 // Content max-width
 $layout-content-padding:                 $layout-padding-default;
@@ -173,10 +174,10 @@ $input-border-focus:                     #66afe9 !default;
 $input-color-placeholder:                #999 !default;
 
 //** Default `.form-control` height
-$input-height-base:                      v-rithm(2) !default;
+$input-height-base:                      $line-height-base * 2 !default;
 
 //** Small `.form-control` height
-$input-height-small:                     v-rithm(1) !default;
+$input-height-small:                     $line-height-base !default;
 
 
 
